@@ -1,0 +1,110 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 10px;
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
+}
+a {
+	text-decoration: none;
+}
+.container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+p {
+	color: black;
+	font-size: 16px;
+	margin-top: 5px;
+	line-height: 40px;
+	font-weight: heavy;
+	letter-spacing: 0.04px;
+
+}
+
+
+#form {
+	background-image: url(pexels-pixabay-139398.jpg);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#form::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.2;
+	z-index: -1;
+}
+.card {
+    border-radius: 40px;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 10);
+    height: 450px;
+    width: 400px;
+    margin: auto;
+    text-align: center;
+
+  }
+
+  .sign{
+    margin-top: 30px;
+    font-size: 50px;
+  }
+#form .card form{
+    margin: 15px;
+    font-size: 20px;
+    font-weight: 800;
+}
+#form .card button{
+    height: 55px;
+    width: 300px;
+    font-size: 30px;
+    background-color: blue;
+    color: whitesmoke;
+    border-radius: 15px;
+	border: none;
+	outline: none;
+    
+
+}
+#form .card button:hover{
+    color: white;
+	background-color: indigo;
+}
+
+.input-box{
+	border-radius: 15px;
+	border: 1px solid#999;
+	height: 30px;
+	width: 300px;
+	margin: 20px 0px;
+	padding: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+input::placeholder{
+    font-style: italic;
+    font-size: 22px;
+}
