@@ -76,7 +76,7 @@ p {
     font-size: 20px;
     font-weight: 800;
 }
-#form .card button{
+#btn{
     height: 55px;
     width: 300px;
     font-size: 30px;
@@ -88,7 +88,7 @@ p {
     
 
 }
-#form .card button:hover{
+ #btn:hover{
     color: white;
 	background-color: indigo;
 }

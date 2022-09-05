@@ -9,42 +9,64 @@
 </head>
 <body>
     <section id="navbar">
-        <div class="logo">Pharma Mart</div>
-      <div class="nav">
+      <div class="logo">
+        <img src="transparent-admin-icon-avatar-icon-human-icon-5d645ce97094b3.2235955315668584734611.png" 
+      alt="" style="height: 100px;
+        width: 100px;"></div>
+        <div class="text"> 
+          Pharma Mart</div>
+      <nav class="nav">
         <ul>
            <li> <a href="">Dashboard</a></li>
            
             <li><a href="">Employee</a></li>
-           <li> <a href="">Inventory</a>
-            <!--<div class="subnav"><li> <a href="">Add Medicine</a></li>
-                <li> <a href="">Medicine</a></li>
-                <li> <a href="">Company info</a></li>
-                <li> <a href="">Invoice</a></li></div>-->
+           <li> <a href="" class="sub-btn">Inventory <span class="span1"> ^</span></a>
+           
+                <ul class="subnav">
+                  <li> <a href="">Add Medicine</a></li>
+                  <li> <a href="">Medicine</a></li>
+                  <li> <a href="">Company info</a></li>
+                  <li> <a href="">Invoice</a></li>
+                </ul>
+  
             </li>
            
            
-           <li><a href="">Report</a></li>
+           <li><a href="" class="sub-btn">Report<span class="span2"> ^</span> </a>
+            <ul class="subnav">
+              <li> <a href="">Sales Report</a></li>
+              <li> <a href="">Order Report</a></li>
+              <li> <a href="">Monthly Income Report</a></li>
+            </ul></li>
            <li><a href="">Projectile</a></li>
            <li><a href="">Customer </a></li>
             
         </ul>
-      </div>
+      </nav>
     </section>
     
-    <section id="db">
-    <div class="db backside">
-       <div class="db search"> 
+    
+    <section id="interface">
+    <div class="navigation">
+       <div class="n1">
+        <div class="search"> 
         <input type="text" placeholder="search">
            <div class="log"><p>Hello,</p>
-            <button><a href="login.php">Log out</a></button></div>
+            <button><a href="login.php">Log out</a></button>
+          </div>
        </div>
+      </div>
     </div>
 </section>
 
 
         
 
-           
+<script>
+  $('.sub-btn').click(function(){
+    $('.nav ul .subnav').toggleClass("show");
+  })
+</script>    
     
     
 </body>

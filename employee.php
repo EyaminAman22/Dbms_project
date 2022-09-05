@@ -31,9 +31,9 @@ $user_data=check_login($connect);
             Pharma Mart</div>
         <nav class="nav">
           <ul>
-             <li> <a href="dashboard.php">Dashboard</a></li>
+          <li> <a href="dashboard.php">Dashboard</a></li>
              
-              <li><a href="employee.php">Employee</a></li>
+             <li><a href="employee.php">Employee</a></li>
              <li> <a href="" class="sub-btn">Inventory <span class="span1"> ^</span></a>
              
                   <ul class="subnav">
@@ -52,7 +52,7 @@ $user_data=check_login($connect);
                 <li> <a href="">Order Report</a></li>
                 <li> <a href="">Monthly Income Report</a></li>
               </ul></li>
-             <li><a href="projectile.php">Projectile</a></li>
+              <li><a href="projectile.php">Projectile</a></li>
              <li><a href="customer.php">Customer </a></li>
               
           </ul>
@@ -75,7 +75,7 @@ $user_data=check_login($connect);
 				</div>
 			</form>
 			
-      <div class="profile"><p>Hello, <?php echo $user_data['username']?></p><a href="login.php"><button>log out </button></a></div>
+      <div class="profile"><p>Hello, <?php echo $_SESSION['username']?></p><a href="login.php"><button>log out </button></a></div>
 
 			
 		</nav>
