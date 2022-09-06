@@ -2,9 +2,24 @@
 session_start();
 include("connection.php");
 include("function.php");
+error_reporting(0);
 
 #$user_data=check_login($connect);
-//
+
+
+$first_name=$_POST['first_name'];
+$last_name=$_POST['last_name'];
+$email=$_POST['email'];
+$phone=$_POST['phone'];
+$salary=$_POST['salary'];
+$join_date=$_POST['join_date'];
+$address=$_POST['address'];
+$employee_id=$_POST['employee_id'];
+
+
+$query="INSERT INTO employee values ('$first_name','$last_name','$email','$phone','$salary','$join_date','$address','$employee_id')";
+
+$data=mysqli_query($connect,$query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,17 +105,14 @@ include("function.php");
         </div>
         <div class="row3">
            <form action="" method="">
-           <input for="first_name" placeholder="First Name"type="text"><br>
-           <input for="last_name" placeholder="Last Name"type="text"><br>
-           <input for="email" placeholder="E-mail"type="text"><br>
-            <input for="phone" placeholder="Phone No..." type="number"><br>
-            <input for="salary" placeholder="Salary" type="number"><br>
-            <input for="join_date" placeholder="Joining Date" type="date"><br>
-            <input for="Address" placeholder="City"type="text"><br>
-            <input for="Address" placeholder="Area"type="text"><br>
-            <input for="Address" placeholder="Road No."type="text"><br>
-            <input for="Address" placeholder="House No."type="text"><br>
-            <input for="Address" placeholder="House No."type="text"><br>
+           <input name="first_name" placeholder="First Name"type="text"><br>
+           <input name="last_name" placeholder="Last Name"type="text"><br>
+           <input name="email" placeholder="E-mail"type="text"><br>
+            <input name="phone" placeholder="Phone No..." type="number"><br>
+            <input name="salary" placeholder="Salary" type="number"><br>
+            <input name="join_date" placeholder="Joining Date" type="date"><br>
+            <input name="Address" placeholder="Address"type="text"><br>
+            <input name="employee_id" placeholder="Employee ID" type="number"><br>
             <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>
            </form>
         </div>
