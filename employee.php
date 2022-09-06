@@ -2,7 +2,28 @@
 session_start();
 include("connection.php");
 include("function.php");
-$user_data=check_login($connect);
+#$user_data=check_login($connect);
+error_reporting(0);
+$query="SELECT * from employee";
+$data=mysqli_query($connect,$query);
+$total=mysqli_num_rows($data);
+$result=mysqli_fetch_assoc($data);
+
+if($total!=0){
+    while($result=mysqli_fetch_assoc($data)){
+        echo "<tr>
+            <td>".$result['first_name']."</td>
+            <td>".$result['last_name']."</td>
+            <td>".$result['email']."</td>
+            <td>".$result['phone']."</td>
+            <td>".$result['salary']."</td>
+            <td>".$result['join_date']."</td>
+            <td>".$result['address']."</td>
+            <td>".$result['employee_id']."</td> 
+            </tr>";
+
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +52,7 @@ $user_data=check_login($connect);
             Pharma Mart</div>
         <nav class="nav">
           <ul>
-          <li> <a href="dashboard.php">Dashboard</a></li>
+          <li> <a href="dash.php">Dashboard</a></li>
              
              <li><a href="employee.php">Employee</a></li>
              <li> <a href="" class="sub-btn">Inventory <span class="span1"> ^</span></a>
@@ -82,7 +103,19 @@ $user_data=check_login($connect);
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
-		
+		  <div class="tab">
+          <table border="3px">
+            <tr><th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone No.</th>
+            <th>Salary</th>
+            <th>Joining Date</th>
+            <th>Address</th>
+            <th>Employee ID</th>
+        </tr>
+            <th></th>
+          </table>
+          </div>
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->

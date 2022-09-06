@@ -2,9 +2,22 @@
 session_start();
 include("connection.php");
 include("function.php");
+error_reporting(0);
 
 #$user_data=check_login($connect);
-//
+
+
+$first_name=$_POST['first_name'];
+$last_name=$_POST['last_name'];
+$gender=$_POST['gender'];
+$age=$_POST['age'];
+$phone=$_POST['phone'];
+$customer_id=$_POST['customer_id'];
+
+
+$query="INSERT INTO customer values ('$first_name','$last_name','$gender','$age','$phone','$customer_id')";
+
+$data=mysqli_query($connect,$query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,10 +44,10 @@ include("function.php");
           <div class="text"> 
             Pharma Mart</div>
         <nav class="nav">
-          <ul>
-             <li> <a href="">Dashboard</a></li>
+        <ul>
+             <li> <a href="dash.php">Dashboard</a></li>
              
-              <li><a href="">Employee</a></li>
+              <li><a href="employee.php">Employee</a></li>
              <li> <a href="" class="sub-btn">Inventory <span class="span1"> ^</span></a>
              
                   <ul class="subnav">
@@ -54,7 +67,7 @@ include("function.php");
                 <li> <a href="">Monthly Income Report</a></li>
               </ul></li>
              <li><a href="">Projectile</a></li>
-             <li><a href="">Customer </a></li>
+             <li><a href="customer.php">Customer </a></li>
               
           </ul>
         </nav>
@@ -89,12 +102,12 @@ include("function.php");
                <div class="texthead"><p>Customer Details</p></div>
         </div>
         <div class="row3">
-           <form action="" method="">
-           <input for="first_name" placeholder="First Name"type="text"><br>
-           <input for="last_name" placeholder="Last Name"type="text"><br>
-           <input for="gender" placeholder="gender"type="text"><br>
-           <input for="age" placeholder="Age" type="number"><br>
-            <input for="phone" placeholder="Phone No..." type="number"><br>
+           <form action="" method="POST">
+           <input name="first_name" placeholder="First Name"type="text"><br>
+           <input name="last_name" placeholder="Last Name"type="text"><br>
+           <input name="gender" placeholder="gender"type="text"><br>
+           <input name="age" placeholder="Age" type="number"><br>
+            <input name="phone" placeholder="Phone No..." type="number"><br>
             
 
             <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>

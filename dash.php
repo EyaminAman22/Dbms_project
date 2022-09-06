@@ -31,10 +31,10 @@ include("function.php");
           <div class="text"> 
             Pharma Mart</div>
         <nav class="nav">
-          <ul>
-             <li> <a href="">Dashboard</a></li>
+        <ul>
+             <li> <a href="dash.php">Dashboard</a></li>
              
-              <li><a href="">Employee</a></li>
+              <li><a href="employee.php">Employee</a></li>
              <li> <a href="" class="sub-btn">Inventory <span class="span1"> ^</span></a>
              
                   <ul class="subnav">
@@ -54,7 +54,7 @@ include("function.php");
                 <li> <a href="">Monthly Income Report</a></li>
               </ul></li>
              <li><a href="">Projectile</a></li>
-             <li><a href="">Customer </a></li>
+             <li><a href="customer.php">Customer </a></li>
               
           </ul>
         </nav>
