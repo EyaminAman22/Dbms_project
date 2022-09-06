@@ -1,8 +1,8 @@
-<?php  //
+<?php 
 session_start();
 include("connection.php");
 include("function.php");
-error_reporting(0);
+
 
 #$user_data=check_login($connect);
 
@@ -15,7 +15,7 @@ $phone=$_POST['phone'];
 $customer_id=$_POST['customer_id'];
 
 
-$query="INSERT INTO customer values ('$first_name','$last_name','$gender','$age','$phone','$customer_id')";
+$query="INSERT INTO customer1 values ('$first_name','$last_name','$gender','$age','$phone','$customer_id')";
 
 $data=mysqli_query($connect,$query);
 ?>
@@ -108,7 +108,7 @@ $data=mysqli_query($connect,$query);
            <input name="gender" placeholder="gender"type="text"><br>
            <input name="age" placeholder="Age" type="number"><br>
             <input name="phone" placeholder="Phone No..." type="number"><br>
-            
+            <input name="customer_id" placeholder="Customer ID" type="number"><br>
 
             <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>
            </form>
