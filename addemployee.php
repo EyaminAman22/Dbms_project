@@ -84,7 +84,7 @@ include("function.php");
 
 		<!-- MAIN -->
 		<div class="row2">
-            <div class="emp2"><button><a href="dash.html">
+            <div class="emp2"><button><a href="dash.php">
                 <img  class="icon"  src="back-arrow.png" alt=""></a></button></div>
                <div class="texthead"><p>Employee Details</p></div>
         </div>
