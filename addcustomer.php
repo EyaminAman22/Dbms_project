@@ -6,7 +6,7 @@
 
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<!-- My CSS -->
+
 	<link rel="stylesheet" href="dash.css">
 
 	<title>AdminHub</title>
@@ -75,25 +75,22 @@
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
-		<div class="row">
-            <div class="emp">
-                <a href="addemployee.html"><button>
-                    <img  class="icon"  src="employee.png" alt=""> <br>  Add Employee</button></a>
-            </div>
-                <a href="addcustomer.html">
-                    <div class="emp"><button>
-                        <img  class="icon"  src="rating.png" alt=""> <br>  Add Customer</button></div>
-                        <div class="emp"><button>
-                </a>
-                       <img  class="icon"  src="enterprise.png" alt=""> <br> Add Company</button></div>
+		<div class="row2">
+            <div class="emp2"><button><a href="dash.html">
+                <img  class="icon"  src="back-arrow.png" alt=""></a></button></div>
+               <div class="texthead"><p>Customer Details</p></div>
         </div>
-        <div class="row">
-            <div class="emp"><button>
-                <img  class="icon"  src="medicine.png" alt=""> <br>  Add Medicine</button></div>
-                <div class="emp"><button>
-                   <img  class="icon"  src="dlf.pt-invoice-png-1742756.png" alt=""> <br> Add Invoice </button></div>
-                   <div class="emp"><button>
-                       <img  class="icon"  src="sales.png" alt=""> <br> Monthly Sales </button></div>
+        <div class="row3">
+           <form action="" method="">
+           <input for="first_name" placeholder="First Name"type="text"><br>
+           <input for="last_name" placeholder="Last Name"type="text"><br>
+           <input for="gender" placeholder="gender"type="text"><br>
+           <input for="age" placeholder="Age" type="number"><br>
+            <input for="phone" placeholder="Phone No..." type="number"><br>
+            
+
+            <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>
+           </form>
         </div>
 		<!-- MAIN -->
 	</section>
