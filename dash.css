@@ -1,0 +1,278 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+
+html {
+    font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+
+body {
+
+}
+
+
+
+
+
+/* SIDEBAR */
+#navbar {
+    position: fixed;
+    width: 250px;
+    background-color:#111827;
+	top: 0;
+	left: 0;
+	height: 100%;
+	z-index: 2000;
+	transition: .3s ease;
+	overflow-x: hidden;
+	scrollbar-width: none;
+}
+
+#navbar .logo{
+	color: aqua;
+	padding: 20px 70px;
+	height: 100px;
+	width: 100px;
+}
+#navbar .text{
+	color: cyan;
+	font-size: 30px;
+	font-weight: bolder;
+	padding: 35px 10px 40px 0px;
+	text-align: center;
+}
+
+.nav ul {
+	background-color: #111827;
+	height: 100%;
+	width: 100%;
+	list-style: none;
+}
+
+
+#navbar .nav{
+	padding: 20px 5px;
+
+}
+#navbar .nav ul li{
+	list-style: none;
+	padding: 15px 20px;
+	color: white;
+	font-size: 23px;
+	
+}
+#navbar .nav ul li:hover{
+	padding: 15px 20px;
+	background-color: #253047;
+	font-size: 30px;
+	cursor: pointer;
+	
+}
+#navbar .nav ul li a{
+	color: white;
+	font-weight:bolder;
+}
+#navbar .nav ul li a:hover{
+	color: rgb(134, 141, 151);
+    transition: 0.3s ease;;
+	font-weight:bolder;
+}
+#navbar .nav ul ul{
+	position: static;
+	display: none;
+}
+#navbar .nav ul ul li{
+	line-height: 32px;
+	border-bottom: none;
+}
+#navbar .nav ul ul li a{
+	font-size: 16px;
+   padding-left: 30px;
+}
+#navbar .nav ul li a .span1{
+	position:absolute;
+	top: 51%;
+	right: 60px;
+	transform: translateY(-50%) rotate(-180deg);
+	font-size: 22px;
+	transition: transform 0.4s;
+}
+#navbar .nav ul li a:hover .span1{
+	
+	transform: translateY(-50%);
+	
+}
+#navbar .nav ul li a .span2{
+	position:absolute;
+	top: 58.5%;
+	right: 60px;
+	transform: translateY(-50%) rotate(-180deg);
+	font-size: 22px;
+	transition: transform 0.4s;
+}
+#navbar .nav ul li a:hover .span2{
+	
+	transform: translateY(-50%);
+	
+}
+.nav ul .subnav.show{
+	display: block;
+}
+
+
+
+
+
+/* CONTENT */
+#content {
+	position: relative;
+	width: calc(100% - 250px);
+	left: 250px;
+	transition: .3s ease;
+}
+
+
+
+
+
+/* NAVBAR */
+#content nav {
+	height: 80px;
+    background-color:#111827;
+	padding: 0 24px;
+	display: flex;
+	align-items: center;
+	grid-gap: 424px;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+#content nav .profile{
+    display: flex;
+    flex-direction: row;
+    grid-gap: 170px;
+    color: antiquewhite;
+    font-size: 20px;
+    padding-top: 10px;
+
+}
+#content nav .profile button{
+	color: antiquewhite;
+    font-size: 20px;
+    border-radius: 15px;
+	border: none;
+	background: transparent;
+}
+#content nav .profile button:hover{
+    color:cyan;
+    font-size:22px ;
+    transition: 0.3s ease;
+}
+#content .profile a 
+  { color: aliceblue;
+	text-decoration: none;
+}
+
+#content .form-input input{
+    outline: none;
+    border: none;
+    width: 400px;
+    height: 25px;
+ 
+ } 
+ #content .form-input input::placeholder{
+     font-size: 20px;
+     font-weight: 400;
+     padding: 30px 20px;
+     outline: none;
+     border: none;
+ }
+
+ #content .form-input .search-btn{
+	color: antiquewhite;
+    height: 100px;
+    width: 40px;
+    font-size: 20px;
+	border: none;
+    background: transparent;
+}
+#content .form-input .search-btn .bx .bx-search{
+    padding-top: 20px;
+    margin: 10px;
+}
+
+/* NAVBAR */
+
+
+
+
+
+/* MAIN */
+
+
+
+
+
+
+
+@media screen and (max-width: 576px) {
+	#content nav form .form-input input {
+		display: none;
+	}
+
+	#content nav form .form-input button {
+		width: auto;
+		height: auto;
+		background: transparent;
+		border-radius: none;
+		color: var(--dark);
+	}
+
+	#content nav form.show .form-input input {
+		display: block;
+		width: 100%;
+	}
+	#content nav form.show .form-input button {
+		width: 36px;
+		height: 100%;
+		border-radius: 0 36px 36px 0;
+		color: var(--light);
+		background: var(--red);
+	}
+
+	#content nav form.show ~ .notification,
+	#content nav form.show ~ .profile {
+		display: none;
+	}
+
+	#content main .box-info {
+		grid-template-columns: 1fr;
+	}
+
+	#content main .table-data .head {
+		min-width: 420px;
+	}
+	#content main .table-data .order table {
+		min-width: 420px;
+	}
+	#content main .table-data .todo .todo-list {
+		min-width: 420px;
+	}
+}
+Footer
+© 2022 GitHub

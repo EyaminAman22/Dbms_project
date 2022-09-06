@@ -4,11 +4,7 @@
 	margin: 0;
 	box-sizing: border-box;
 }
-body{
-	display: flex;
-	width: 100%;
-	position: relative;
-}
+
 html {
 	font-size: 10px;
 	font-family: 'Montserrat', sans-serif;
@@ -17,64 +13,148 @@ html {
 a { 
 	text-decoration: none;
 }
-.container {
-	min-height: 100vh;
-	width: 100%;
+body{
 	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-p {
-	color: white;
-	font-size: 22px;
-	line-height: 40px;
-	font-weight: 300;
-	letter-spacing: 0.04px;
-}
-
-
-
-
-#db{
-width: calc(100%-300px);
-}
-
-#db .backside{
+	position: relative;
 	width: 100%;
+	
+}
+
+#navbar{
+	position: fixed;
+	width: 250px;
+	height: 100%;
+	background-color:#111827;
+	
+}
+#navbar .logo{
+	color: aqua;
+	padding: 20px 70px;
+	height: 100px;
+	width: 100px;
+}
+#navbar .text{
+	color: cyan;
+	font-size: 30px;
+	font-weight: bolder;
+	padding: 35px 10px 40px 0px;
+	text-align: center;
+}
+
+.nav ul {
+	background-color: #111827;
+	height: 100%;
+	width: 100%;
+	list-style: none;
+}
+
+
+#navbar .nav{
+	padding: 20px 5px;
+
+}
+#navbar .nav ul li{
+	list-style: none;
+	padding: 15px 20px;
+	color: white;
+	font-size: 23px;
+	
+}
+#navbar .nav ul li:hover{
+	padding: 15px 20px;
+	background-color: #253047;
+	font-size: 30px;
+	cursor: pointer;
+	
+}
+#navbar .nav ul li a{
+	color: white;
+	font-weight:bolder;
+}
+#navbar .nav ul li a:hover{
+	color: rgb(134, 141, 151);
+    transition: 0.3s ease;;
+	font-weight:bolder;
+}
+#navbar .nav ul ul{
+	position: static;
+	display: none;
+}
+#navbar .nav ul ul li{
+	line-height: 32px;
+	border-bottom: none;
+}
+#navbar .nav ul ul li a{
+	font-size: 16px;
+   padding-left: 30px;
+}
+#navbar .nav ul li a .span1{
+	position:absolute;
+	top: 51.5%;
+	right: 60px;
+	transform: translateY(-50%) rotate(-180deg);
+	font-size: 22px;
+	transition: transform 0.4s;
+}
+#navbar .nav ul li a:hover .span1{
+	
+	transform: translateY(-50%);
+	
+}
+#navbar .nav ul li a .span2{
+	position:absolute;
+	top: 59%;
+	right: 60px;
+	transform: translateY(-50%) rotate(-180deg);
+	font-size: 22px;
+	transition: transform 0.4s;
+}
+#navbar .nav ul li a:hover .span2{
+	
+	transform: translateY(-50%);
+	
+}
+.nav ul .subnav.show{
+	display: block;
+}
+
+
+#interface{
+   width: calc(100%-250px);
+}
+
+
+#interface .navigation{
+
     background-color: #111827;
     display: flex;
 	align-items: center;
 	justify-content:space-between;
 	padding: 10px 15px;
 }
-#db .backside .search{
-	width: 100%;
-    display: flex;
+#interface .navigation .search{
 	align-items: center;
-	justify-content: space-between;
 	background-color: #111827;
 	padding: 10px 15px;
 
 } 
-#db .backside .search input{
+#interface .navigation .search input{
    outline: none;
    border: none;
-   height: 30px;
-   width: 300px;
 
 } 
-#db .backside .search input::placeholder{
+#interface .navigation .search input::placeholder{
 	font-size: 20px;
 	font-weight: 400;
 	padding: 5px 20px;
 	margin-top: 10px;
 	outline: none;
 	border: none;
-	height: 30px;
-	width: 300px;
+	height: 40px;
+	width: 700px;
 }
-#db .search .log button{
+
+#interface .navigation .log button{
 	color: antiquewhite;
     height: 55px;
     width: 100px;
@@ -82,61 +162,17 @@ width: calc(100%-300px);
     border-radius: 15px;
 	border: none;
 	background: transparent;
-	justify-content: flex-end;
     
 
 }
-#db .search .log button:hover{
+#interface .navigation .search .log button:hover{
     color: white;
 }
-#db .search .log button a { color: aliceblue;
+#interface .navigation .search .log button a 
+  { color: aliceblue;
 	text-decoration: none;
 }
 
-#navbar{
-	width: 300px;
-	height: 100vh;
-	background-color:#111827;
-}
-#navbar .logo{
-	text-decoration: underline;
-	font-size: 40px;
-	color: white;
-	font-weight: bolder;
-	padding: 20px 10px 40px 0px;
-}
-#navbar .nav{
-	margin: 20px 0px;
 
-}
-#navbar .nav li{
-	list-style: none;
-	padding: 15px 50px;
-	color: white;
-	font-size: 30px;
-	
-}
-#navbar .nav li:hover{
-	padding: 15px 50px;
-	background-color: #253047;
-	font-size: 30px;
-	cursor: pointer;
-	
-}
-#navbar .nav li a{
-	color: white;
-	font-weight:bolder;
-}
-#navbar .nav li a:hover{
-	color: rgb(134, 141, 151);
-    transition: 0.3s ease;;
-	font-weight:bolder;
-}
 
-.subnav{
-	display: none;
-}
-#navbar .nav li a:hover .subnav{
-	color: white;
-	font-weight:bolder;
-}
+
