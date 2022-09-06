@@ -83,12 +83,12 @@ include("function.php");
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
-		<div class="row">
+        <div class="row">
             <div class="emp">
-                <a href="addemployee.html"><button>
+                <a href="addemployee.php"><button>
                     <img  class="icon"  src="employee.png" alt=""> <br>  Add Employee</button></a>
             </div>
-                <a href="addcustomer.html">
+                <a href="addcustomer.php">
                     <div class="emp"><button>
                         <img  class="icon"  src="rating.png" alt=""> <br>  Add Customer</button></div>
                         <div class="emp"><button>
@@ -103,6 +103,7 @@ include("function.php");
                    <div class="emp"><button>
                        <img  class="icon"  src="sales.png" alt=""> <br> Monthly Sales </button></div>
         </div>
+      
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->

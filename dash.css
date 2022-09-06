@@ -216,7 +216,7 @@ html {
 	display: flex;
 	flex-direction: row;
 	padding: 90px 120px;
-	grid-gap:150px;
+	grid-gap:120px;
 }
  .emp{
 	display: flex ;
@@ -301,11 +301,6 @@ html {
 	height: 30px;
 }
 
-.tab table{
-	font-size: 20px;
-	padding: 10px;
-	justify-content: space-between;
-}
 /* NAVBAR */
 
 
