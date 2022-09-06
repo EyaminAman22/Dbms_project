@@ -1,9 +1,10 @@
-<?php
-session_start();
-include("connection.php");
-include("function.php");
-$user_data=check_login($connect);
+<?php  //
+#session_start();
+#include("connection.php");
+#include("function.php");
 
+#$user_data=check_login($connect);
+//
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,9 +32,9 @@ $user_data=check_login($connect);
             Pharma Mart</div>
         <nav class="nav">
           <ul>
-             <li> <a href="dashboard.php">Dashboard</a></li>
+             <li> <a href="">Dashboard</a></li>
              
-              <li><a href="employee.php">Employee</a></li>
+              <li><a href="">Employee</a></li>
              <li> <a href="" class="sub-btn">Inventory <span class="span1"> ^</span></a>
              
                   <ul class="subnav">
@@ -52,8 +53,8 @@ $user_data=check_login($connect);
                 <li> <a href="">Order Report</a></li>
                 <li> <a href="">Monthly Income Report</a></li>
               </ul></li>
-             <li><a href="projectile.php">Projectile</a></li>
-             <li><a href="customer.php">Customer </a></li>
+             <li><a href="">Projectile</a></li>
+             <li><a href="">Customer </a></li>
               
           </ul>
         </nav>
@@ -75,14 +76,33 @@ $user_data=check_login($connect);
 				</div>
 			</form>
 			
-      <div class="profile"><p>Hello, <?php echo $user_data['username']?></p><a href="login.php"><button>log out </button></a></div>
-
+				
+            <div class="profile"><p>Hello,</p><a href="login.php"><button>log out </button></a></div>
 			
 		</nav>
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
-		
+		<div class="row">
+            <div class="emp">
+                <a href="addemployee.html"><button>
+                    <img  class="icon"  src="employee.png" alt=""> <br>  Add Employee</button></a>
+            </div>
+                <a href="addcustomer.html">
+                    <div class="emp"><button>
+                        <img  class="icon"  src="rating.png" alt=""> <br>  Add Customer</button></div>
+                        <div class="emp"><button>
+                </a>
+                       <img  class="icon"  src="enterprise.png" alt=""> <br> Add Company</button></div>
+        </div>
+        <div class="row">
+            <div class="emp"><button>
+                <img  class="icon"  src="medicine.png" alt=""> <br>  Add Medicine</button></div>
+                <div class="emp"><button>
+                   <img  class="icon"  src="dlf.pt-invoice-png-1742756.png" alt=""> <br> Add Invoice </button></div>
+                   <div class="emp"><button>
+                       <img  class="icon"  src="sales.png" alt=""> <br> Monthly Sales </button></div>
+        </div>
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->

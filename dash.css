@@ -21,10 +21,6 @@ html {
 }
 
 
-body {
-
-}
-
 
 
 
@@ -216,6 +212,94 @@ body {
     margin: 10px;
 }
 
+.row{
+	display: flex;
+	flex-direction: row;
+	padding: 90px 120px;
+	grid-gap:150px;
+}
+ .emp{
+	display: flex ;
+	flex-direction: column;
+	width: 220px;
+	height: 150px; 
+
+}
+.emp button{
+	
+	border: none;
+	outline: none;
+	background-color: #111827;
+	font-size: 30px;
+	color: white;
+	border-radius: 20px;
+}
+.emp button:hover{
+	border: none;
+	outline: none;
+	background-color: #283b65;
+	
+}
+.emp img{
+	height: 130px;
+	width: 120px;
+}
+
+.emp2{
+	display: flex ;
+	flex-direction: row-reverse;
+	width: 50px;
+	height: 50px; 
+
+}
+.emp2 button{
+	
+	border: none;
+	outline: none;
+	background-color: #111827;
+	border-radius: 10px;
+}
+.emp2 button:hover{
+	border: none;
+	outline: none;
+	background-color: #283b65;
+	
+}
+.emp2 img{
+	height: 50px;
+	width: 50px;
+}
+.row2{
+	display: flex;
+	flex-direction: row-reverse;
+	margin: 20px 40px;
+}
+.texthead{
+	font-size: 30px;
+	font-weight: bolder;
+	padding-right: 370px;
+	text-decoration: underline;
+	bottom: 100px;
+}
+.row3{
+	line-height: 50px;
+	display: flex;
+	flex-direction: column;
+	padding-left: 100px;
+	align-items: center;
+}
+
+.row3 input{
+	width: 400px;
+	height: 40px;
+}
+
+.row3 .btn input{
+	width: 160px;
+	margin-right: 17px ;
+    margin-left: 15px ;
+	height: 30px;
+}
 /* NAVBAR */
 
 
@@ -274,5 +358,3 @@ body {
 		min-width: 420px;
 	}
 }
-Footer
-© 2022 GitHub
