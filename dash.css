@@ -17,7 +17,6 @@ li {
 html {
     font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
-	overflow-x: hidden;
 }
 
 
@@ -35,8 +34,7 @@ html {
 	height: 100%;
 	z-index: 2000;
 	transition: .3s ease;
-	overflow-x: hidden;
-	scrollbar-width: none;
+
 }
 
 #navbar .logo{
@@ -69,13 +67,13 @@ html {
 	list-style: none;
 	padding: 15px 20px;
 	color: white;
-	font-size: 23px;
+	font-size: 17px;
 	
 }
 #navbar .nav ul li:hover{
 	padding: 15px 20px;
 	background-color: #253047;
-	font-size: 30px;
+	font-size: 20px;
 	cursor: pointer;
 	
 }
@@ -88,47 +86,8 @@ html {
     transition: 0.3s ease;;
 	font-weight:bolder;
 }
-#navbar .nav ul ul{
-	position: static;
-	display: none;
-}
-#navbar .nav ul ul li{
-	line-height: 32px;
-	border-bottom: none;
-}
-#navbar .nav ul ul li a{
-	font-size: 16px;
-   padding-left: 30px;
-}
-#navbar .nav ul li a .span1{
-	position:absolute;
-	top: 51%;
-	right: 60px;
-	transform: translateY(-50%) rotate(-180deg);
-	font-size: 22px;
-	transition: transform 0.4s;
-}
-#navbar .nav ul li a:hover .span1{
-	
-	transform: translateY(-50%);
-	
-}
-#navbar .nav ul li a .span2{
-	position:absolute;
-	top: 58.5%;
-	right: 60px;
-	transform: translateY(-50%) rotate(-180deg);
-	font-size: 22px;
-	transition: transform 0.4s;
-}
-#navbar .nav ul li a:hover .span2{
-	
-	transform: translateY(-50%);
-	
-}
-.nav ul .subnav.show{
-	display: block;
-}
+
+
 
 
 
@@ -300,6 +259,25 @@ html {
     margin-left: 15px ;
 	height: 30px;
 }
+
+table{
+	color: white;
+	border-collapse: collapse;
+	background-color: #111827;
+	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .03);
+	border-radius: 10px;
+	margin: auto;
+}
+th,td{
+	border: 1px solid #f2f2f2;
+	padding: 8px 30px;
+	text-align: center;
+	color: white;
+}
+td{
+	font-size: 13px;
+}
+
 
 /* NAVBAR */
 

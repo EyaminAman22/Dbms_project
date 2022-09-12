@@ -1,31 +1,4 @@
-<?php
-session_start();
-include("connection.php");
-include("function.php");
-#$user_data=check_login($connect);
-error_reporting(0);
-$query="SELECT * from employee";
-$data=mysqli_query($connect,$query);
-$total=mysqli_num_rows($data);
-$result=mysqli_fetch_assoc($data);
 
-if($total!=0){
-    while($result=mysqli_fetch_assoc($data)){
-        echo "<tr>
-            <td>".$result['first_name']."</td>
-            <td>".$result['last_name']."</td>
-            <td>".$result['email']."</td>
-            <td>".$result['phone']."</td>
-            <td>".$result['salary']."</td>
-            <td>".$result['join_date']."</td>
-            <td>".$result['address']."</td>
-            <td>".$result['employee_id']."</td> 
-            </tr>";
-
-    }
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +8,7 @@ if($total!=0){
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="dash.css">
+	<link rel="stylesheet" href="dash.css?v=<?php echo time();?>">
 
 	<title>AdminHub</title>
 </head>
@@ -55,26 +28,16 @@ if($total!=0){
           <li> <a href="dash.php">Dashboard</a></li>
              
              <li><a href="employee.php">Employee</a></li>
-             <li> <a href="" class="sub-btn">Inventory <span class="span1"> ^</span></a>
-             
-                  <ul class="subnav">
-                    <li> <a href="">Add Medicine</a></li>
-                    <li> <a href="">Medicine</a></li>
+              <li> <a href="">Medicine</a></li>
                     <li> <a href="">Company info</a></li>
                     <li> <a href="">Invoice</a></li>
-                  </ul>
+                     <li> <a href="">Monthly Income Report</a></li>
+           
+                    <li><a href="">Projectile</a></li>
+                    <li><a href="customer.php">Customer </a></li>
     
               </li>
              
-             
-             <li><a href="" class="sub-btn">Report<span class="span2"> ^</span> </a>
-              <ul class="subnav">
-                <li> <a href="">Sales Report</a></li>
-                <li> <a href="">Order Report</a></li>
-                <li> <a href="">Monthly Income Report</a></li>
-              </ul></li>
-              <li><a href="projectile.php">Projectile</a></li>
-             <li><a href="customer.php">Customer </a></li>
               
           </ul>
         </nav>
@@ -96,7 +59,7 @@ if($total!=0){
 				</div>
 			</form>
 			
-      <div class="profile"><p>Hello, <?php echo $_SESSION['username']?></p><a href="login.php"><button>log out </button></a></div>
+      <div class="profile"><p>Hello, <?php #echo $_SESSION['username']?></p><a href="login.php"><button>log out </button></a></div>
 
 			
 		</nav>
@@ -105,15 +68,47 @@ if($total!=0){
 		<!-- MAIN -->
 		  <div class="tab">
           <table border="3px">
-            <tr><th>First Name</th>
+          <thead> <tr><th>First Name</th>
             <th>Last Name</th>
+            <th>E-mail</th>
             <th>Phone No.</th>
             <th>Salary</th>
             <th>Joining Date</th>
             <th>Address</th>
             <th>Employee ID</th>
-        </tr>
-            <th></th>
+        </tr></thead>
+            <tbody>
+
+           <?php 
+           session_start();
+           include("connection.php");
+           include("function.php");
+           #$user_data=check_login($connect);
+           
+           
+           $query="SELECT * FROM employee";
+           $data=mysqli_query($connect,$query);
+           $total=mysqli_num_rows($data);
+           
+           
+           
+           if($total!=0){
+    while($result=mysqli_fetch_array($data)){ ?>
+            <tr>
+            <td><?php echo $result['first_name']?></td>
+            <td><?php echo $result['last_name']?></td>
+            <td><?php echo $result['email']?></td>
+            <td><?php echo $result['phone']?></td>
+            <td><?php echo $result['salary']?></td>
+            <td><?php echo $result['join_date']?></td>
+            <td><?php echo $result['address']?></td>
+            <td><?php echo $result['employee_id']?></td>
+            </tr>
+<?php
+    }
+}  ?>
+            </tbody>
+
           </table>
           </div>
 		<!-- MAIN -->

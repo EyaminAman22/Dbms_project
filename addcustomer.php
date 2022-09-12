@@ -2,22 +2,27 @@
 session_start();
 include("connection.php");
 include("function.php");
+error_reporting(0);
 
 
 #$user_data=check_login($connect);
 
 
-$first_name=$_POST['first_name'];
-$last_name=$_POST['last_name'];
+$first_name=$_POST["first_name"];
+$last_name=$_POST["last_name"];
 $gender=$_POST['gender'];
 $age=$_POST['age'];
 $phone=$_POST['phone'];
-$customer_id=$_POST['customer_id'];
+
+if(!empty($first_name) && !empty($last_name) && !empty($gender)  && !empty($age) && !empty($phone) && !is_numeric($first_name) && !is_numeric($last_name) && !is_numeric($gender) && is_numeric($age) && is_numeric($phone)){
+    $customer_id=random_num(10);
+    $query= "insert into customer1 (first_name,last_name,gender,age,phone,customer_id) VALUES ('$first_name','$last_name','$gender','$age','$phone','$customer_id')";
+    mysqli_query($connect, $query);
+    header("Location: dash.php");
+    die;
+  }
 
 
-$query="INSERT INTO customer1 values ('$first_name','$last_name','$gender','$age','$phone','$customer_id')";
-
-$data=mysqli_query($connect,$query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,10 +110,9 @@ $data=mysqli_query($connect,$query);
            <form action="" method="POST">
            <input name="first_name" placeholder="First Name"type="text"><br>
            <input name="last_name" placeholder="Last Name"type="text"><br>
-           <input name="gender" placeholder="gender"type="text"><br>
+           <input name="gender" placeholder="Gender"type="text"><br>
            <input name="age" placeholder="Age" type="number"><br>
             <input name="phone" placeholder="Phone No..." type="number"><br>
-            <input name="customer_id" placeholder="Customer ID" type="number"><br>
 
             <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>
            </form>

@@ -2,22 +2,25 @@
 session_start();
 include("connection.php");
 include("function.php");
-
+error_reporting(0);
 #$user_data=check_login($connect);
-$first_name=$_POST['first_name'];
-$last_name=$_POST['last_name'];
-$email=$_POST['email'];
-$phone=$_POST['phone'];
-$join_date=$_POST['join_date'];
-$salary=$_POST['salary'];
 
-$address=$_POST['address'];
-$employee_id=$_POST['employee_id'];
+$first_name=$_POST["first_name"];
+$last_name=$_POST["last_name"];
+$email=$_POST["email"];
+$phone=$_POST["phone"];
+$join_date=$_POST["join_date"];
+$salary=$_POST["salary"];
+$address=$_POST["address"];
 
-$query="INSERT INTO employee values ('$first_name','$last_name','$email','$phone','$join_date','$salary','$address','$employee_id')";
-$data=mysqli_query($connect,$query);
-
-
+if(!empty($first_name) && !empty($last_name) && !empty($email)  && !empty($phone) && !empty($salary) && !empty($address) && !is_numeric($first_name) && !is_numeric($last_name) && !is_numeric($email) && is_numeric($phone) && is_numeric($salary) && !is_numeric($address))
+{
+    $employee_id=random_num(5);
+    $query= "insert into employee (first_name, last_name, email, phone, join_date, salary, address,employee_id) VALUES ('$first_name','$last_name','$email','$phone','$join_date','$salary','$address','$employee_id')";
+    $data=mysqli_query($connect,$query);
+    header("Location: addemployee.php");
+    die;
+  }
 
 ?>
 
@@ -111,9 +114,7 @@ $data=mysqli_query($connect,$query);
             <input name="phone" placeholder="Phone No..." type="number"><br>
             <input name="join_date" placeholder="Joining Date" type="date"><br>
             <input name="salary" placeholder="Salary" type="number"><br>
-            
             <input name="address" placeholder="Address"type="text"><br>
-            <input name="employee_id" placeholder="Employee ID" type="number"><br>
             <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>
            </form>
         </div>
@@ -122,7 +123,7 @@ $data=mysqli_query($connect,$query);
 	<!-- CONTENT -->
 	
 
-	<script src="">const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
+	<script src="">const allSideMenu = document.querySelectorAll('#navbar .nav .subnav li a');
 
         allSideMenu.forEach(item=> {
             const li = item.parentElement;

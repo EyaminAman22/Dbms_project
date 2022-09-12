@@ -4,26 +4,8 @@ include("connection.php");
 include("function.php");
 #$user_data=check_login($connect);
 error_reporting(0);
-$query="SELECT * from employee";
-$data=mysqli_query($connect,$query);
-$total=mysqli_num_rows($data);
-$result=mysqli_fetch_assoc($data);
 
-if($total!=0){
-    while($result=mysqli_fetch_assoc($data)){
-        echo "<tr>
-            <td>".$result['first_name']."</td>
-            <td>".$result['last_name']."</td>
-            <td>".$result['email']."</td>
-            <td>".$result['phone']."</td>
-            <td>".$result['salary']."</td>
-            <td>".$result['join_date']."</td>
-            <td>".$result['address']."</td>
-            <td>".$result['employee_id']."</td> 
-            </tr>";
 
-    }
-}
 
 ?>
 <!DOCTYPE html>
@@ -35,7 +17,7 @@ if($total!=0){
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="dash.css">
+	<link rel="stylesheet" href="dash.css?v=<?php echo time();?>">
 
 	<title>AdminHub</title>
 </head>
@@ -55,28 +37,23 @@ if($total!=0){
           <li> <a href="dash.php">Dashboard</a></li>
              
              <li><a href="employee.php">Employee</a></li>
-             <li> <a href="" class="sub-btn">Inventory <span class="span1"> ^</span></a>
              
-                  <ul class="subnav">
-                    <li> <a href="">Add Medicine</a></li>
+                
+            
                     <li> <a href="">Medicine</a></li>
                     <li> <a href="">Company info</a></li>
                     <li> <a href="">Invoice</a></li>
-                  </ul>
+              
     
-              </li>
+     
              
-             
-             <li><a href="" class="sub-btn">Report<span class="span2"> ^</span> </a>
-              <ul class="subnav">
-                <li> <a href="">Sales Report</a></li>
-                <li> <a href="">Order Report</a></li>
+                    
+            
                 <li> <a href="">Monthly Income Report</a></li>
-              </ul></li>
               <li><a href="projectile.php">Projectile</a></li>
              <li><a href="customer.php">Customer </a></li>
               
-          </ul>
+        
         </nav>
       </section>
       
@@ -96,43 +73,47 @@ if($total!=0){
 				</div>
 			</form>
 			
-      <div class="profile"><p>Hello, <?php echo $_SESSION['username']?></p><a href="login.php"><button>log out </button></a></div>
+      <div class="profile"><p>Hello, <?php #echo $_SESSION['username']?></p><a href="login.php"><button>log out </button></a></div>
 
 			
 		</nav>
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
-        <div class="tab">
-          <table border="3px">
-            <tr><th>First Name</th>
+          <table>
+      <thead>    <tr><th>First Name</th>
             <th>Last Name</th>
             <th>Gender</th>
             <th>Age</th>
             <th>Phone No.</th>
-            
             <th>Customer ID</th>
-        </tr>
-            <th></th>
+        </tr></thead>  
+            <tbody>    <?php    
+            $query="SELECT * from customer1";
+            $data=mysqli_query($connect,$query);
+            $total=mysqli_num_rows($data);
+            
+            if($total!=0){
+    while($result=mysqli_fetch_array($data)){ ?>
+<tr>
+            <td><?php echo $result['first_name']?></td>
+            <td><?php echo $result['last_name']?></td>
+            <td><?php echo $result['gender']?></td>
+            <td><?php echo $result['age']?></td>
+            <td><?php echo $result['phone']?></td>
+            <td><?php echo $result['customer_id']?></td>
+            </tr>
+<?php
+    }
+}  ?></tbody>
           </table>
-          </div>
+          
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
 	
 
-	<script src="">const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
-
-        allSideMenu.forEach(item=> {
-            const li = item.parentElement;
-        
-            item.addEventListener('click', function () {
-                allSideMenu.forEach(i=> {
-                    i.parentElement.classList.remove('active');
-                })
-                li.classList.add('active');
-            })
-        });
+	<script src="">
         
         
         
