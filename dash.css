@@ -174,14 +174,14 @@ html {
 .row{
 	display: flex;
 	flex-direction: row;
-	padding: 90px 120px;
-	grid-gap:120px;
+	padding: 90px 100px;
+	grid-gap:100px;
 }
  .emp{
 	display: flex ;
 	flex-direction: column;
-	width: 220px;
-	height: 150px; 
+	width: 200px;
+	height: 180px; 
 
 }
 .emp button{
@@ -200,8 +200,8 @@ html {
 	
 }
 .emp img{
-	height: 130px;
-	width: 120px;
+	height: 100px;
+	width: 90px;
 }
 
 .emp2{
@@ -265,12 +265,12 @@ table{
 	border-collapse: collapse;
 	background-color: #111827;
 	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .03);
-	border-radius: 10px;
-	margin: auto;
+	border-radius: 5px;
+	margin: 10px 10px;
 }
 th,td{
 	border: 1px solid #f2f2f2;
-	padding: 8px 30px;
+	padding: 8px 20px;
 	text-align: center;
 	color: white;
 }
@@ -336,4 +336,22 @@ td{
 	#content main .table-data .todo .todo-list {
 		min-width: 420px;
 	}
+}
+ 
+.del-btn{
+	width: 50px;
+	height:30px;
+	color: yellowgreen;
+	background-color: rgb(1, 169, 169);
+	font-size: 15px;
+	font-weight: bolder;
+	border-radius: 10px;
+	text-decoration: none;
+}
+ .del-btn a{
+	text-decoration: none;
+}
+.del-btn a:hover{
+	color: white;
+	text-decoration: none;
 }

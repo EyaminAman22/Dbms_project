@@ -87,6 +87,7 @@ error_reporting(0);
             <th>Age</th>
             <th>Phone No.</th>
             <th>Customer ID</th>
+            <th>Operation</th>
         </tr></thead>  
             <tbody>    <?php    
             $query="SELECT * from customer1";
@@ -102,6 +103,8 @@ error_reporting(0);
             <td><?php echo $result['age']?></td>
             <td><?php echo $result['phone']?></td>
             <td><?php echo $result['customer_id']?></td>
+            <td><button class="del-btn"> <a href="delete.php">Delete</a>   </button><?php $result['customer_id']?>
+            <button class="del-btn"> <a href="delete.php">Edit</a>   </button><?php $result['customer_id']?></td>
             </tr>
 <?php
     }

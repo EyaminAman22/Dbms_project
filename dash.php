@@ -12,8 +12,6 @@ include("function.php");
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Boxicons -->
-	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="dash.css">
 
@@ -81,6 +79,8 @@ include("function.php");
                         <div class="emp"><button>
                 </a>
                        <img  class="icon"  src="enterprise.png" alt=""> <br> Add Company</button></div>
+                       <div class="emp"><button>
+                       <img  class="icon"  src="expired.png" alt=""> <br> Expire & Out of Stock</button></div>
         </div>
         <div class="row">
             <div class="emp"><button>
@@ -89,6 +89,8 @@ include("function.php");
                    <img  class="icon"  src="dlf.pt-invoice-png-1742756.png" alt=""> <br> Add Invoice </button></div>
                    <div class="emp"><button>
                        <img  class="icon"  src="sales.png" alt=""> <br> Monthly Sales </button></div>
+                       <div class="emp"><button>
+                       <img  class="icon"  src="payment-method.png" alt=""> <br>Payment </button></div>
         </div>
       
 		<!-- MAIN -->
