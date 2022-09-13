@@ -112,7 +112,7 @@ if(!empty($first_name) && !empty($last_name) && !empty($email)  && !empty($phone
            <input name="last_name" placeholder="Last Name"type="text"><br>
            <input name="email" placeholder="E-mail"type="text"><br>
             <input name="phone" placeholder="Phone No..." type="number"><br>
-            <input name="join_date" placeholder="Joining Date" type="date"><br>
+            <input name="join_date" placeholder="Joining Date" type="date" onfocus="(this.type='date')"><br>
             <input name="salary" placeholder="Salary" type="number"><br>
             <input name="address" placeholder="Address"type="text"><br>
             <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>

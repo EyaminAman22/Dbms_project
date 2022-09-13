@@ -1,17 +1,36 @@
-<?php  //
+<?php 
 session_start();
 include("connection.php");
 include("function.php");
+error_reporting(0);
 
 #$user_data=check_login($connect);
-//
+
+$invoice_id=$_POST["invoice_id"];
+$total_payment=$_POST["total_payment"];
+$payment_due=$_POST["payment_due"];
+$company_id=$_POST["company_id"];
+$invoice_date=$_POST["invoice_date"];
+
+if(!empty($invoice_id) && !empty($total_payment) && !empty($payment_due) && !empty($company_id) && !is_numeric($company_name) && is_numeric($company_id) && is_numeric($payment_due) && !is_numeric($total_payment))
+{
+    $company_id=random_num(3);
+    $query= "insert into invoice (invoice_id,total_payment,payment_due,company_id,invoice_date) VALUES ('$invoice_id','$total_payment','$payment_due','$company_id','$invoice_date')";
+    $data=mysqli_query($connect,$query);
+    header("Location: addcompany.php");
+    die;
+  }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="dash.css">
 
@@ -29,17 +48,21 @@ include("function.php");
           <div class="text"> 
             Pharma Mart</div>
         <nav class="nav">
-        <ul>
+          <ul>
              <li> <a href="dash.php">Dashboard</a></li>
              
               <li><a href="employee.php">Employee</a></li>
                     <li> <a href="medicine.php">Medicine</a></li>
                     <li> <a href="company.php">Company info</a></li>
                     <li> <a href="invoice.php">Invoice</a></li>
-                     <li> <a href="MIreport.php">Monthly Income Report</a></li>
-                    <li><a href="customer.php">Customer </a></li>
-                    <li><a href="">Payment Info</a></li>
-              
+                 
+             
+
+                <li> <a href="MIreport">Monthly Income Report</a></li>
+    
+             
+             <li><a href="customer.php">Customer </a></li>
+             <li><a href="">Payment Info</a></li>
           </ul>
         </nav>
       </section>
@@ -67,38 +90,27 @@ include("function.php");
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
-        <div class="row">
-            <div class="emp">
-                <a href="addemployee.php"><button>
-                    <img  class="icon"  src="employee.png" alt=""> <br>  Add Employee</button></a>
-            </div>
-                <a href="addcustomer.php">
-                    <div class="emp"><button>
-                        <img  class="icon"  src="rating.png" alt=""> <br>  Add Customer</button></div> </a>
-                        <a href="addcompany.php"><div class="emp"><button>
-               
-               <img  class="icon"  src="enterprise.png" alt=""> <br> Add Company</button>
-            </div></a>
-                       <div class="emp"><button>
-                       <img  class="icon"  src="expired.png" alt=""> <br> Expire & Out of Stock</button></div>
+		<div class="row2">
+            <div class="emp2"><button><a href="dash.php">
+                <img  class="icon"  src="back-arrow.png" alt=""></a></button></div>
+               <div class="texthead"><p>Company Details</p></div>
         </div>
-        <div class="row">
-            <div class="emp"><button>
-                <img  class="icon"  src="medicine.png" alt=""> <br>  Add Medicine</button></div>
-                <a href="addinvoice.php"><div class="emp"><button>
-                   <img  class="icon"  src="dlf.pt-invoice-png-1742756.png" alt=""> <br> Add Invoice </button></div></a>
-                   <div class="emp"><button>
-                       <img  class="icon"  src="sales.png" alt=""> <br> Monthly Sales </button></div>
-                       <div class="emp"><button>
-                       <img  class="icon"  src="payment-method.png" alt=""> <br>Payment </button></div>
+        <div class="row3">
+           <form action="" method="POST">
+           <input name="invoice_id" placeholder="Invoice"type="text"><br>
+           <input name="total_payment" placeholder="Total Payment"type="email"><br>
+            <input name="payment_due" placeholder="Payment Due" type="number"><br>
+            <input name="company_id" placeholder="Company ID"type="text"><br>
+            <input name="invoice_date" placeholder="Invoice Date"type="text"><br>
+            <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>
+           </form>
         </div>
-      
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
 	
 
-	<script src="">const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
+	<script src="">const allSideMenu = document.querySelectorAll('#navbar .nav .subnav li a');
 
         allSideMenu.forEach(item=> {
             const li = item.parentElement;
