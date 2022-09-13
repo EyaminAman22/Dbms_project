@@ -65,11 +65,12 @@
 		  <div class="tab">
           <table>
           <thead> <tr>
-            <th>Company Name</th>
-            <th>E-mail</th>
-            <th>Phone No.</th>
-            <th>Address</th>
+            <th>Invoice_id</th>
+            <th>Total Payment</th>
+            <th>Payment Due</th>
+            <th>Paid Amount</th>
             <th>Company ID</th>
+            <th>Invoice Date</th>
             <th>Operation</th>
         </tr></thead>
             <tbody>
@@ -81,7 +82,7 @@
            #$user_data=check_login($connect);
            
            
-           $query="SELECT * FROM company";
+           $query="SELECT * FROM invoice";
            $data=mysqli_query($connect,$query);
            $total=mysqli_num_rows($data);
            
@@ -90,11 +91,12 @@
            if($total!=0){
     while($result=mysqli_fetch_array($data)){ ?>
             <tr>
-            <td><?php echo $result['company_name']?></td>
-            <td><?php echo $result['email']?></td>
-            <td><?php echo $result['phone']?></td>
-            <td><?php echo $result['address']?></td>
+            <td><?php echo $result['invoice_id']?></td>
+            <td><?php echo $result['total_payment']?></td>
+            <td><?php echo $result['payment_due']?></td>
+            <td>  <?php echo $result['total_payment'-'payment_due']?>  </td>
             <td><?php echo $result['company_id']?></td>
+            <td><?php echo $result['invoice_date']?></td>
             <td><button class="del-btn"> <a href="delete.php?employee_id=<?php $result['company_id']?>">Delete</a>   </button>
             <button class="del-btn"> <a href="edit.php">Edit</a>   </button><?php $result['company_id']?></td>
             </tr>
