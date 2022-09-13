@@ -5,7 +5,6 @@ include("function.php");
 error_reporting(0);
 #$user_data=check_login($connect);
 
-$medicine_id=$_POST["medicine_id"];
 $medicine_name=$_POST["medicine_name"];
 $dosage=$_POST["dosage"];
 $mgf=$_POST["mgf"];
@@ -15,10 +14,10 @@ $quantity=$_POST["quantity"];
 $base_price=$_POST["base_price"];
 $sell_price=$_POST["sell_price"];
 
-if(!empty($medicine_id) && !empty($medicine_name) && !empty($dosage)  && !empty($mgf) && !empty($exp) && !empty($category)&& !empty($quantity)&& !empty($base_price)&& !empty($sell_price) && is_numeric($medicine_id) && !is_numeric($medicine_name) && is_numeric($dosage) && !is_numeric($category) && is_numeric($quantity) && is_numeric($base_price) && is_numeric($sell_price))
+
+if(!empty($medicine_id) && !empty($medicine_name) && !empty($dosage)  && !empty($mgf) && !empty($exp) && !empty($category)&& !empty($quantity)&& !empty($base_price)&& !empty($sell_price) && is_numeric($medicine_id) && !is_numeric($medicine_name) && is_numeric($dosage)  && is_numeric($quantity) && is_numeric($base_price) && is_numeric($sell_price))
 {
-    $medicine_id=random_num(5);
-    $query= "insert into medicine_info (medicine_id, medicine_name, dosage, mgf, exp, category, quantity,base_price,sell_price) VALUES ('$medicine_id','$medicine_name','$dosage','$mgf','$exp','$category','$quantity','$base_price','$sell_price')";
+    $query= "insert into medicine (medicine_id, medicine_name, dosage, mgf, exp, category, quantity,base_price,sell_price,company_id) VALUES ('$medicine_id','$medicine_name','$dosage','$mgf','$exp','$category','$quantity','$base_price','$sell_price','$company_id')";
     $data=mysqli_query($connect,$query);
     header("Location: addmedicine.php");
     die;
@@ -54,31 +53,15 @@ if(!empty($medicine_id) && !empty($medicine_name) && !empty($dosage)  && !empty(
             Pharma Mart</div>
         <nav class="nav">
           <ul>
-             <li> <a href="dash.php">Dashboard</a></li>
-             
+             <li> <a href="dash.php">Dashboard</a></li>  
               <li><a href="employee.php">Employee</a></li>
-             <li> <a href="" class="sub-btn">Inventory <span class="span1"> ^</span></a>
-             
-                  <ul class="subnav">
-                    <li> <a href="">Add Medicine</a></li>
-                    <li> <a href="">Medicine</a></li>
-                    <li> <a href="">Company info</a></li>
-                    <li> <a href="">Invoice</a></li>
-                  </ul>
-    
-              </li>
-             
-             
-             <li><a href="" class="sub-btn">Report<span class="span2"> ^</span> </a>
-              <ul class="subnav">
-                <li> <a href="">Sales Report</a></li>
-                <li> <a href="">Order Report</a></li>
+                    <li> <a href="medicine.php">Medicine</a></li>
+                    <li> <a href="company.php">Company info</a></li>
+                    <li> <a href="invoice.php">Invoice</a></li>
                 <li> <a href="">Monthly Income Report</a></li>
-              </ul></li>
-             <li><a href="">Projectile</a></li>
              <li><a href="customer.php">Customer </a></li>
+             <li><a href="">Payment Info</a></li>
               
-          </ul>
         </nav>
       </section>
       
@@ -111,17 +94,21 @@ if(!empty($medicine_id) && !empty($medicine_name) && !empty($dosage)  && !empty(
                <div class="texthead"><p>Medicine Details</p></div>
         </div>
         <div class="row3">
-           <form action="" method="POST">
-           <input name="medicine_id" placeholder="Medicine ID"type="number"><br>
+           <form action="medicine.php" method="POST">
            <input name="medicine_name" placeholder="Medicine Name"type="text"><br>
            <input name="dosage" placeholder="Dosage(mg/ml)"type="number"><br>
            <input name="mgf" placeholder="MGF"type="date"><br>
             <input name="exp" placeholder="EXP" type="date"><br>
-            <input name="category" placeholder="Category" type="text"><br>
+            <input name="category" placeholder="Category" type="text" list="exampleList"><br>
+                   <datalist id="exampleList">
+                      <option value="Tablet">  
+                      <option value="Liquid">
+                         </datalist>
             <input name="quantity" placeholder="Quantity"type="number"><br>
         
             <input name="base_price" placeholder="Base Price" type="number"><br>
             <input name="sell_price" placeholder="Sell Price"type="number"><br>
+            <input name="company_id" placeholder="Company ID"type="number"><br>
             <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>
            </form>
         </div>

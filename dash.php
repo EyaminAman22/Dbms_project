@@ -83,8 +83,10 @@ include("function.php");
                        <img  class="icon"  src="expired.png" alt=""> <br> Expire & Out of Stock</button></div>
         </div>
         <div class="row">
-            <div class="emp"><button>
+                <a href="addmedicine.php">
+                <div class="emp"><button>
                 <img  class="icon"  src="medicine.png" alt=""> <br>  Add Medicine</button></div>
+                </a>
                 <a href="addinvoice.php"><div class="emp"><button>
                    <img  class="icon"  src="dlf.pt-invoice-png-1742756.png" alt=""> <br> Add Invoice </button></div></a>
                    <div class="emp"><button>

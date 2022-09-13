@@ -1,26 +1,3 @@
-<?php 
-session_start();
-include("connection.php");
-include("function.php");
-error_reporting(0);
-
-#$user_data=check_login($connect);
-
-$total_payment=$_POST["total_payment"];
-$payment_due=$_POST["payment_due"];
-$company_id=$_POST["company_id"];
-$invoice_date=$_POST["invoice_date"];
-
-if(!empty($invoice_id) && !empty($total_payment) && !empty($payment_due) && !empty($company_id))
-{
-    $company_id=random_num(3);
-    $query= "insert into invoice (invoice_id,total_payment,payment_due,company_id,invoice_date) VALUES ('$invoice_id','$total_payment','$payment_due','$company_id','$invoice_date')";
-    $data=mysqli_query($connect,$query);
-    header("Location: addinvoice.php");
-    die;
-  }
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +8,7 @@ if(!empty($invoice_id) && !empty($total_payment) && !empty($payment_due) && !emp
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="dash.css">
+	<link rel="stylesheet" href="dash.css?v=<?php echo time();?>">
 
 	<title>AdminHub</title>
 </head>
@@ -48,20 +25,19 @@ if(!empty($invoice_id) && !empty($total_payment) && !empty($payment_due) && !emp
             Pharma Mart</div>
         <nav class="nav">
           <ul>
-             <li> <a href="dash.php">Dashboard</a></li>
+          <li> <a href="dash.php">Dashboard</a></li>
              
-              <li><a href="employee.php">Employee</a></li>
-                    <li> <a href="medicine.php">Medicine</a></li>
+             <li><a href="employee.php">Employee</a></li>
+              <li> <a href="">Medicine</a></li>
                     <li> <a href="company.php">Company info</a></li>
                     <li> <a href="invoice.php">Invoice</a></li>
-                 
-             
-
-                <li> <a href="MIreport.com">Monthly Income Report</a></li>
+                     <li> <a href="">Monthly Income Report</a></li>
+                    <li><a href="customer.php">Customer </a></li>
+                    <li><a href="">Payment Info</a></li>
     
+              </li>
              
-             <li><a href="customer.php">Customer </a></li>
-             <li><a href="">Payment Info</a></li>
+              
           </ul>
         </nav>
       </section>
@@ -82,34 +58,72 @@ if(!empty($invoice_id) && !empty($total_payment) && !empty($payment_due) && !emp
 				</div>
 			</form>
 			
-				
-            <div class="profile"><p>Hello,</p><a href="login.php"><button>log out </button></a></div>
+      <div class="profile"><p>Hello, <?php #echo $_SESSION['username']?></p><a href="login.php"><button>log out </button></a></div>
+
 			
 		</nav>
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
-		<div class="row2">
-            <div class="emp2"><button><a href="dash.php">
-                <img  class="icon"  src="back-arrow.png" alt=""></a></button></div>
-               <div class="texthead"><p>Company Details</p></div>
-        </div>
-        <div class="row3">
-           <form action="" method="POST">
-           <input name="invoice_id" placeholder="Invoice"type="number"><br>
-           <input name="total_payment" placeholder="Total Payment"type="number"><br>
-            <input name="payment_due" placeholder="Payment Due" type="number"><br>
-            <input name="company_id" placeholder="Company ID"type="number"><br>
-            <input name="invoice_date" placeholder="Invoice Date"type="date"><br>
-            <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>
-           </form>
-        </div>
+		  <div class="tab">
+          <table>
+          <thead> <tr><th>Medicine ID</th>
+            <th> Medicine Name</th>
+            <th>Dosage</th>
+            <th>Manufacture</th>
+            <th>Expiry</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Base Price</th>
+            <th>Sell Price</th>
+            <th>Company ID</th>
+            <th>Operation</th>
+        </tr></thead>
+            <tbody>
+
+           <?php 
+           session_start();
+           include("connection.php");
+           include("function.php");
+           #$user_data=check_login($connect);
+           
+           
+           $query="SELECT * FROM medicine";
+           $data=mysqli_query($connect,$query);
+           $total=mysqli_num_rows($data);
+           
+           
+           
+           if($total!=0){
+    while($result=mysqli_fetch_array($data)){ ?>
+            <tr>
+            <td><?php echo $result['medicine_id']?></td>
+            <td><?php echo $result['Medicine_name']?></td>
+            <td><?php echo $result['dosage']?></td>
+            <td><?php echo $result['mgf']?></td>
+            <td><?php echo $result['exp']?></td>
+            <td><?php echo $result['category']?></td>
+            <td><?php echo $result['quantity']?></td>
+            <td><?php echo $result['base_price']?></td>
+            <td><?php echo $result['sell_price']?></td>
+            <td><?php echo $result['company_id']?></td>
+            <td><button class="del-btn"> <a href="delete.php?medicine_id=<?php $result['medicine_id']?>">Delete</a>   </button>
+            <button class="del-btn"> <a href="edit.php">Edit</a>   </button><?php $result['medicine_id']?></td>
+            </tr>
+            </tr>
+<?php
+    }
+}  ?>
+            </tbody>
+
+          </table>
+          </div>
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
 	
 
-	<script src="">const allSideMenu = document.querySelectorAll('#navbar .nav .subnav li a');
+	<script src="">const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
         allSideMenu.forEach(item=> {
             const li = item.parentElement;

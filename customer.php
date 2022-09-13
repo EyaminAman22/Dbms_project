@@ -40,9 +40,9 @@ error_reporting(0);
              
                 
             
-                    <li> <a href="">Medicine</a></li>
-                    <li> <a href="">Company info</a></li>
-                    <li> <a href="">Invoice</a></li>
+                    <li> <a href="medicine.php">Medicine</a></li>
+                    <li> <a href="company.php">Company info</a></li>
+                    <li> <a href="invoice.php">Invoice</a></li>
               
     
      
@@ -50,9 +50,9 @@ error_reporting(0);
                     
             
                 <li> <a href="">Monthly Income Report</a></li>
-              <li><a href="projectile.php">Projectile</a></li>
-             <li><a href="customer.php">Customer </a></li>
               
+             <li><a href="customer.php">Customer </a></li>
+             <li><a href="">Payment Info</a></li>
         
         </nav>
       </section>

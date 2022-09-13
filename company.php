@@ -28,7 +28,7 @@
           <li> <a href="dash.php">Dashboard</a></li>
              
              <li><a href="employee.php">Employee</a></li>
-              <li> <a href="">Medicine</a></li>
+              <li> <a href="medicine.php">Medicine</a></li>
                     <li> <a href="company.php">Company info</a></li>
                     <li> <a href="invoice.php">Invoice</a></li>
                      <li> <a href="Mireport.php">Monthly Income Report</a></li>

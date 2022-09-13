@@ -28,13 +28,12 @@
           <li> <a href="dash.php">Dashboard</a></li>
              
              <li><a href="employee.php">Employee</a></li>
-              <li> <a href="">Medicine</a></li>
-                    <li> <a href="">Company info</a></li>
-                    <li> <a href="">Invoice</a></li>
+              <li> <a href="medicine.php">Medicine</a></li>
+                    <li> <a href="company.php">Company info</a></li>
+                    <li> <a href="invoice.php">Invoice</a></li>
                      <li> <a href="">Monthly Income Report</a></li>
-           
-                    <li><a href="">Projectile</a></li>
                     <li><a href="customer.php">Customer </a></li>
+                    <li><a href="">Payment Info</a></li>
     
               </li>
              
@@ -67,7 +66,7 @@
 
 		<!-- MAIN -->
 		  <div class="tab">
-          <table border="3px">
+          <table>
           <thead> <tr><th>First Name</th>
             <th>Last Name</th>
             <th>E-mail</th>
