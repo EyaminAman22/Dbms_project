@@ -50,30 +50,17 @@ if(!empty($first_name) && !empty($last_name) && !empty($email)  && !empty($phone
             Pharma Mart</div>
         <nav class="nav">
           <ul>
-             <li> <a href="dash.php">Dashboard</a></li>
+          <li> <a href="dash.php">Dashboard</a></li>
              
-              <li><a href="employee.php">Employee</a></li>
-             <li> <a href="" class="sub-btn">Inventory <span class="span1"> ^</span></a>
-             
-                  <ul class="subnav">
-                    <li> <a href="">Add Medicine</a></li>
-                    <li> <a href="">Medicine</a></li>
-                    <li> <a href="">Company info</a></li>
-                    <li> <a href="">Invoice</a></li>
-                  </ul>
+             <li><a href="employee.php">Employee</a></li>
+              <li> <a href="">Medicine</a></li>
+                    <li> <a href="company.php">Company info</a></li>
+                    <li> <a href="invoice.php">Invoice</a></li>
+                     <li> <a href="">Monthly Income Report</a></li>
+                    <li><a href="customer.php">Customer </a></li>
+                    <li><a href="">Payment Info</a></li>
     
               </li>
-             
-             
-             <li><a href="" class="sub-btn">Report<span class="span2"> ^</span> </a>
-              <ul class="subnav">
-                <li> <a href="">Sales Report</a></li>
-                <li> <a href="">Order Report</a></li>
-                <li> <a href="">Monthly Income Report</a></li>
-              </ul></li>
-             <li><a href="">Projectile</a></li>
-             <li><a href="customer.php">Customer </a></li>
-              
           </ul>
         </nav>
       </section>

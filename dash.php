@@ -79,9 +79,11 @@ include("function.php");
                
                <img  class="icon"  src="enterprise.png" alt=""> <br> Add Company</button>
             </div></a>
+                       <a href="expire.php">
                        <div class="emp"><button>
-                       <img  class="icon"  src="expired.png" alt=""> <br> Expire & Out of Stock</button></div>
-        </div>
+                       <img  class="icon"  src="expired.png" alt=""> <br> Expire</button></div>
+        </div>   
+                       </a>
         <div class="row">
                 <a href="addmedicine.php">
                 <div class="emp"><button>
@@ -91,90 +93,14 @@ include("function.php");
                    <img  class="icon"  src="dlf.pt-invoice-png-1742756.png" alt=""> <br> Add Invoice </button></div></a>
                    <div class="emp"><button>
                        <img  class="icon"  src="sales.png" alt=""> <br> Monthly Sales </button></div>
-                       <div class="emp"><button>
-                       <img  class="icon"  src="payment-method.png" alt=""> <br>Payment </button></div>
-        </div>
+                       <a href="stock.php"><div class="emp"><button>
+                       <img  class="icon"  src="out-of-stock.png" alt=""> <br>Out of Stock </button></div>
+        </div></a>
       
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
 	
 
-	<script src="">const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
-
-        allSideMenu.forEach(item=> {
-            const li = item.parentElement;
-        
-            item.addEventListener('click', function () {
-                allSideMenu.forEach(i=> {
-                    i.parentElement.classList.remove('active');
-                })
-                li.classList.add('active');
-            })
-        });
-        
-        
-        
-        
-        // TOGGLE SIDEBAR
-        const menuBar = document.querySelector('#content nav .bx.bx-menu');
-        const sidebar = document.getElementById('sidebar');
-        
-        menuBar.addEventListener('click', function () {
-            sidebar.classList.toggle('hide');
-        })
-        
-        
-        
-        
-        
-        
-        
-        const searchButton = document.querySelector('#content nav form .form-input button');
-        const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
-        const searchForm = document.querySelector('#content nav form');
-        
-        searchButton.addEventListener('click', function (e) {
-            if(window.innerWidth < 576) {
-                e.preventDefault();
-                searchForm.classList.toggle('show');
-                if(searchForm.classList.contains('show')) {
-                    searchButtonIcon.classList.replace('bx-search', 'bx-x');
-                } else {
-                    searchButtonIcon.classList.replace('bx-x', 'bx-search');
-                }
-            }
-        })
-        
-        
-        
-        
-        
-        if(window.innerWidth < 768) {
-            sidebar.classList.add('hide');
-        } else if(window.innerWidth > 576) {
-            searchButtonIcon.classList.replace('bx-x', 'bx-search');
-            searchForm.classList.remove('show');
-        }
-        
-        
-        window.addEventListener('resize', function () {
-            if(this.innerWidth > 576) {
-                searchButtonIcon.classList.replace('bx-x', 'bx-search');
-                searchForm.classList.remove('show');
-            }
-        })
-        
-        
-        
-        const switchMode = document.getElementById('switch-mode');
-        
-        switchMode.addEventListener('change', function () {
-            if(this.checked) {
-                document.body.classList.add('dark');
-            } else {
-                document.body.classList.remove('dark');
-            }
-        })</script>
 </body>
 </html>
