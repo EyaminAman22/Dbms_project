@@ -107,8 +107,12 @@ error_reporting(0);
                 <input type="hidden" name="customer_id" value="<?php echo $result['customer_id']?>">
                 <input type="submit" name="delete" class="operation" value="Delete">
             </form>
+            <form action="editcus.php" method="POST">
+                <input type="hidden" name="customer_id" value="<?php echo $result['customer_id']?>">
+                <input type="submit" name="edit" class="operation" value="Edit">
+            </form>
                 
-            <button class="del-btn"> <a href="delete.php">Edit</a>   </button><?php $result['customer_id']?></td>
+           </td>
             </tr>
 <?php
     }

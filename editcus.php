@@ -2,8 +2,6 @@
 session_start();
 include("connection.php");
 include("function.php");
-error_reporting(0);
-
 
 #$user_data=check_login($connect);
 
@@ -14,13 +12,7 @@ $gender=$_POST['gender'];
 $age=$_POST['age'];
 $phone=$_POST['phone'];
 
-if(!empty($first_name) && !empty($last_name) && !empty($gender)  && !empty($age) && !empty($phone) && !is_numeric($first_name) && !is_numeric($last_name) && !is_numeric($gender) && is_numeric($age) && is_numeric($phone)){
-    $customer_id=random_num(5);
-    $query= "insert into customer2 (first_name,last_name,gender,age,phone,customer_id) VALUES ('$first_name','$last_name','$gender','$age','$phone','$customer_id')";
-    mysqli_query($connect, $query);
-    header("Location: addcustomer.php");
-    die;
-  }
+
 
 
 ?>
@@ -73,12 +65,7 @@ if(!empty($first_name) && !empty($last_name) && !empty($gender)  && !empty($age)
 		<!-- NAVBAR -->
 		<nav>
 		
-			<form action="#">
-				<div class="form-input">
-					<input type="search" placeholder="Search...">
-					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
-				</div>
-			</form>
+		
 			
 				
             <div class="profile"><p>Hello,</p><a href="login.php"><button>log out </button></a></div>
@@ -93,16 +80,42 @@ if(!empty($first_name) && !empty($last_name) && !empty($gender)  && !empty($age)
                <div class="texthead"><p>Update Customer Details</p></div>
         </div>
         <div class="row3">
-           <form action="" method="POST">
-           <input name="first_name" placeholder="First Name"type="text"><br>
-           <input name="last_name" placeholder="Last Name"type="text"><br>
-           <input name="gender" placeholder="Gender"type="text"><br>
-           <input name="age" placeholder="Age" type="number"><br>
-            <input name="phone" placeholder="Phone No..." type="number"><br>
 
-            <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>
+           <form action="" method="POST">
+            <?php 
+            if(isset($_POST['edit'])){
+                
+$customer_id=$_POST['customer_id'];
+$editquery="select * from customer2 where customer_id='$customer_id'";
+$query=mysqli_query($connect,$editquery);
+if($query)
+{   while($result=mysqli_fetch_array($query)){
+    ?>     <input type="hidden" name="customer_id" value="<?php echo $result['customer_id']?>">
+           <input name="first_name" placeholder="First Name"type="text" value="<?php echo $result['first_name']?>"><br>
+           <input name="last_name" placeholder="Last Name"type="text" value="<?php echo $result['last_name']?>"><br>
+           <input name="gender" placeholder="Gender"type="text" value="<?php echo $result['gender']?>"><br>
+           <input name="age" placeholder="Age" type="number" value="<?php echo $result['age']?>"><br>
+            <input name="phone" placeholder="Phone No..." type="number" value="<?php echo $result['phone']?>"><br>
+
+            <div class="btn"><input class="btn" type="submit" value="save"><input class="btn" type="reset"><br></div>
+                <?php
+}}}  if(isset($_POST['edit'])){
+    $first_name=$_POST["first_name"];
+$last_name=$_POST["last_name"];
+$gender=$_POST['gender'];
+$age=$_POST['age'];
+$phone=$_POST['phone'];
+
+    $customer_id=$_POST['customer_id'];
+    $editquery="update from customer2 set 'first_name'=$first_name,'last_name'= $last_name,'gender'=$gender,'age'= $age,'phone'= $phone where customer_id='$customer_id'";
+    $query=mysqli_query($connect,$editquery);
+    if($query)
+{      header("Location:customer.php");
+}
+}
+           ?>
            </form>
-        </div>
+           
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
