@@ -82,7 +82,7 @@
            #$user_data=check_login($connect);
            
            
-           $query="SELECT * FROM invoice";
+           $query="SELECT * FROM invoice1";
            $data=mysqli_query($connect,$query);
            $total=mysqli_num_rows($data);
            

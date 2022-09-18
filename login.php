@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
   if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
 
-    $query= "select* from signup where user_name='$user_name' LIMIT 1";
+    $query= "select* from signup1 where user_name='$user_name' LIMIT 1";
     $result= mysqli_query($connect, $query);
     if($result)
 			{

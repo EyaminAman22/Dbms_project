@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
   if(!empty($user_name) && !empty($password)  && !empty($email) && !is_numeric($user_name) && !is_numeric($email)){
     $user_id= random_num(20);
-    $query= "insert into signup(user_name,password,email,user_id) values('$user_name','$password','$email','$user_id')";
+    $query= "insert into signup1(user_name,password,email,user_id) values('$user_name','$password','$email','$user_id')";
     mysqli_query($connect, $query);
     header("Location: login.php");
     die;

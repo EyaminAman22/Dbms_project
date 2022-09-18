@@ -16,7 +16,7 @@ $address=$_POST["address"];
 if(!empty($first_name) && !empty($last_name) && !empty($email)  && !empty($phone) && !empty($salary) && !empty($address) && !is_numeric($first_name) && !is_numeric($last_name) && !is_numeric($email) && is_numeric($phone) && is_numeric($salary) && !is_numeric($address))
 {
     $employee_id=random_num(5);
-    $query= "insert into employee (first_name, last_name, email, phone, join_date, salary, address,employee_id) VALUES ('$first_name','$last_name','$email','$phone','$join_date','$salary','$address','$employee_id')";
+    $query= "insert into employee1 (first_name, last_name, email, phone, join_date, salary, address,employee_id) VALUES ('$first_name','$last_name','$email','$phone','$join_date','$salary','$address','$employee_id')";
     $data=mysqli_query($connect,$query);
     header("Location: addemployee.php");
     die;

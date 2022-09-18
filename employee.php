@@ -86,7 +86,7 @@
            #$user_data=check_login($connect);
            
            
-           $query="SELECT * FROM employee";
+           $query="SELECT * FROM employee1";
            $data=mysqli_query($connect,$query);
            $total=mysqli_num_rows($data);
            

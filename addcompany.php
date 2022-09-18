@@ -14,7 +14,7 @@ $address=$_POST["address"];
 if(!empty($company_name) && !empty($email) && !empty($address) && !empty($phone) && !empty($address) && !is_numeric($company_name) && !is_numeric($email) && is_numeric($phone) && !is_numeric($address))
 {
     $company_id=random_num(3);
-    $query= "insert into company (company_name, email, phone, address,company_id) VALUES ('$company_name','$email','$phone','$address','$company_id')";
+    $query= "insert into company1 (company_name, email, phone, address,company_id) VALUES ('$company_name','$email','$phone','$address','$company_id')";
     $data=mysqli_query($connect,$query);
     header("Location: addcompany.php");
     die;

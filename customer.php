@@ -90,7 +90,7 @@ error_reporting(0);
             <th>Operation</th>
         </tr></thead>  
             <tbody>    <?php    
-            $query="SELECT * from customer1";
+            $query="SELECT * from customer2";
             $data=mysqli_query($connect,$query);
             $total=mysqli_num_rows($data);
             

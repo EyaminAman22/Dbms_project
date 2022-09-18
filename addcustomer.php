@@ -16,7 +16,7 @@ $phone=$_POST['phone'];
 
 if(!empty($first_name) && !empty($last_name) && !empty($gender)  && !empty($age) && !empty($phone) && !is_numeric($first_name) && !is_numeric($last_name) && !is_numeric($gender) && is_numeric($age) && is_numeric($phone)){
     $customer_id=random_num(10);
-    $query= "insert into customer1 (first_name,last_name,gender,age,phone,customer_id) VALUES ('$first_name','$last_name','$gender','$age','$phone','$customer_id')";
+    $query= "insert into customer2 (first_name,last_name,gender,age,phone,customer_id) VALUES ('$first_name','$last_name','$gender','$age','$phone','$customer_id')";
     mysqli_query($connect, $query);
     header("Location: dash.php");
     die;

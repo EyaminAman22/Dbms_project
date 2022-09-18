@@ -17,7 +17,7 @@ $sell_price=$_POST["sell_price"];
 
 if(!empty($medicine_id) && !empty($medicine_name) && !empty($dosage)  && !empty($mgf) && !empty($exp) && !empty($category)&& !empty($quantity)&& !empty($base_price)&& !empty($sell_price) && is_numeric($medicine_id) && !is_numeric($medicine_name) && is_numeric($dosage)  && is_numeric($quantity) && is_numeric($base_price) && is_numeric($sell_price))
 {
-    $query= "insert into medicine (medicine_id, medicine_name, dosage, mgf, exp, category, quantity,base_price,sell_price,company_id) VALUES ('$medicine_id','$medicine_name','$dosage','$mgf','$exp','$category','$quantity','$base_price','$sell_price','$company_id')";
+    $query= "insert into medicine1 (medicine_id, medicine_name, dosage, mgf, exp, category, quantity,base_price,sell_price,company_id) VALUES ('$medicine_id','$medicine_name','$dosage','$mgf','$exp','$category','$quantity','$base_price','$sell_price','$company_id')";
     $data=mysqli_query($connect,$query);
     header("Location: addmedicine.php");
     die;

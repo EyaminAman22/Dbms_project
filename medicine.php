@@ -88,7 +88,7 @@
            #$user_data=check_login($connect);
            
            
-           $query="SELECT * FROM medicine";
+           $query="SELECT * FROM medicine1";
            $data=mysqli_query($connect,$query);
            $total=mysqli_num_rows($data);
            

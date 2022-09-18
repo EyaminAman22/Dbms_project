@@ -13,8 +13,7 @@ $invoice_date=$_POST["invoice_date"];
 
 if(!empty($invoice_id) && !empty($total_payment) && !empty($payment_due) && !empty($company_id))
 {
-    $company_id=random_num(3);
-    $query= "insert into invoice (invoice_id,total_payment,payment_due,company_id,invoice_date) VALUES ('$invoice_id','$total_payment','$payment_due','$company_id','$invoice_date')";
+    $query= "insert into invoice1 (invoice_id,total_payment,payment_due,company_id,invoice_date) VALUES ('$invoice_id','$total_payment','$payment_due','$company_id','$invoice_date')";
     $data=mysqli_query($connect,$query);
     header("Location: addinvoice.php");
     die;
