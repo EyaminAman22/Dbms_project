@@ -174,14 +174,14 @@ html {
 .row{
 	display: flex;
 	flex-direction: row;
-	padding: 90px 100px;
+	padding: 90px 90px;
 	grid-gap:100px;
 }
  .emp{
 	display: flex ;
 	flex-direction: column;
 	width: 200px;
-	height: 180px; 
+	height: 150px; 
 
 }
 .emp button{
@@ -196,7 +196,7 @@ html {
 .emp button:hover{
 	border: none;
 	outline: none;
-	background-color: #283b65;
+	background-color: #34508c;
 	
 }
 .emp img{

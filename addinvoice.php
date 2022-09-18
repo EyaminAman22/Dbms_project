@@ -5,15 +5,16 @@ include("function.php");
 error_reporting(0);
 
 #$user_data=check_login($connect);
-
+$invoice_id=$_POST["invoice_id"];
 $total_payment=$_POST["total_payment"];
 $payment_due=$_POST["payment_due"];
+$paid_amount=$_POST["paid_amount"];
 $company_id=$_POST["company_id"];
 $invoice_date=$_POST["invoice_date"];
 
-if(!empty($invoice_id) && !empty($total_payment) && !empty($payment_due) && !empty($company_id))
+if( !empty($total_payment) && !empty($payment_due) && !empty($company_id))
 {
-    $query= "insert into invoice1 (invoice_id,total_payment,payment_due,company_id,invoice_date) VALUES ('$invoice_id','$total_payment','$payment_due','$company_id','$invoice_date')";
+    $query= "insert into invoice1 (invoice_id,total_payment,payment_due,paid_amount,company_id,invoice_date) VALUES ('$invoice_id','$total_payment','$payment_due','$paid_amount','$company_id','$invoice_date')";
     $data=mysqli_query($connect,$query);
     header("Location: addinvoice.php");
     die;
@@ -98,6 +99,7 @@ if(!empty($invoice_id) && !empty($total_payment) && !empty($payment_due) && !emp
            <input name="invoice_id" placeholder="Invoice"type="number"><br>
            <input name="total_payment" placeholder="Total Payment"type="number"><br>
             <input name="payment_due" placeholder="Payment Due" type="number"><br>
+            <input name="paid_amount" placeholder="Paid Amount" type="number"><br>
             <input name="company_id" placeholder="Company ID"type="number"><br>
             <input name="invoice_date" placeholder="Invoice Date"type="date"><br>
             <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>

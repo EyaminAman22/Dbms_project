@@ -15,10 +15,10 @@ $age=$_POST['age'];
 $phone=$_POST['phone'];
 
 if(!empty($first_name) && !empty($last_name) && !empty($gender)  && !empty($age) && !empty($phone) && !is_numeric($first_name) && !is_numeric($last_name) && !is_numeric($gender) && is_numeric($age) && is_numeric($phone)){
-    $customer_id=random_num(10);
+    $customer_id=random_num(5);
     $query= "insert into customer2 (first_name,last_name,gender,age,phone,customer_id) VALUES ('$first_name','$last_name','$gender','$age','$phone','$customer_id')";
     mysqli_query($connect, $query);
-    header("Location: dash.php");
+    header("Location: addcustomer.php");
     die;
   }
 
@@ -50,29 +50,15 @@ if(!empty($first_name) && !empty($last_name) && !empty($gender)  && !empty($age)
             Pharma Mart</div>
         <nav class="nav">
         <ul>
-             <li> <a href="dash.php">Dashboard</a></li>
+        <<li> <a href="dash.php">Dashboard</a></li>
              
-              <li><a href="employee.php">Employee</a></li>
-             <li> <a href="" class="sub-btn">Inventory <span class="span1"> ^</span></a>
-             
-                  <ul class="subnav">
-                    <li> <a href="">Add Medicine</a></li>
-                    <li> <a href="">Medicine</a></li>
-                    <li> <a href="">Company info</a></li>
-                    <li> <a href="">Invoice</a></li>
-                  </ul>
-    
-              </li>
-             
-             
-             <li><a href="" class="sub-btn">Report<span class="span2"> ^</span> </a>
-              <ul class="subnav">
-                <li> <a href="">Sales Report</a></li>
-                <li> <a href="">Order Report</a></li>
-                <li> <a href="">Monthly Income Report</a></li>
-              </ul></li>
-             <li><a href="">Projectile</a></li>
-             <li><a href="customer.php">Customer </a></li>
+             <li><a href="employee.php">Employee</a></li>
+                   <li> <a href="medicine.php">Medicine</a></li>
+                   <li> <a href="company.php">Company info</a></li>
+                   <li> <a href="invoice.php">Invoice</a></li>
+                    <li> <a href="MIreport.php">Monthly Income Report</a></li>
+                   <li><a href="customer.php">Customer </a></li>
+                   <li><a href="">Payment Info</a></li>
               
           </ul>
         </nav>

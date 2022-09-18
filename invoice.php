@@ -94,7 +94,7 @@
             <td><?php echo $result['invoice_id']?></td>
             <td><?php echo $result['total_payment']?></td>
             <td><?php echo $result['payment_due']?></td>
-            <td>  <?php echo $result['total_payment'-'payment_due']?>  </td>
+            <td>  <?php echo $result['paid_amount']?>  </td>
             <td><?php echo $result['company_id']?></td>
             <td><?php echo $result['invoice_date']?></td>
             <td><button class="del-btn"> <a href="delete.php?employee_id=<?php $result['company_id']?>">Delete</a>   </button>

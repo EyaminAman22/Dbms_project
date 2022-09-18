@@ -13,7 +13,7 @@ include("function.php");
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- My CSS -->
-	<link rel="stylesheet" href="dash.css">
+    <link rel="stylesheet" href="dash.css?v=<?php echo time();?>">
 
 	<title>AdminHub</title>
 </head>
