@@ -90,7 +90,7 @@ if(!empty($first_name) && !empty($last_name) && !empty($gender)  && !empty($age)
 		<div class="row2">
             <div class="emp2"><button><a href="dash.php">
                 <img  class="icon"  src="back-arrow.png" alt=""></a></button></div>
-               <div class="texthead"><p>Customer Details</p></div>
+               <div class="texthead"><p>Update Customer Details</p></div>
         </div>
         <div class="row3">
            <form action="" method="POST">

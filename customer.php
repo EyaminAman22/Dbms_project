@@ -103,7 +103,11 @@ error_reporting(0);
             <td><?php echo $result['age']?></td>
             <td><?php echo $result['phone']?></td>
             <td><?php echo $result['customer_id']?></td>
-            <td><button class="del-btn"> <a href="delete.php">Delete</a>   </button><?php $result['customer_id']?>
+            <td> <form action="delcus.php" method="POST">
+                <input type="hidden" name="customer_id" value="<?php echo $result['customer_id']?>">
+                <input type="submit" name="delete" class="operation" value="Delete">
+            </form>
+                
             <button class="del-btn"> <a href="delete.php">Edit</a>   </button><?php $result['customer_id']?></td>
             </tr>
 <?php

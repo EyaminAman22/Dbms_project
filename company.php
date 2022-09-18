@@ -96,7 +96,12 @@
             <td><?php echo $result['phone']?></td>
             <td><?php echo $result['address']?></td>
             <td><?php echo $result['company_id']?></td>
-            <td><button class="del-btn"> <a href="delete.php?employee_id=<?php $result['company_id']?>">Delete</a>   </button>
+           
+            <td>
+            <form action="delcom.php" method="POST">
+                <input type="hidden" name="company_id" value="<?php echo $result['company_id']?>">
+                <input type="submit" name="delete" class="operation" value="Delete">
+            </form>
             <button class="del-btn"> <a href="edit.php">Edit</a>   </button><?php $result['company_id']?></td>
             </tr>
             </tr>
