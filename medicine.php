@@ -107,8 +107,10 @@
             <td><?php echo $result['base_price']?></td>
             <td><?php echo $result['sell_price']?></td>
             <td><?php echo $result['company_id']?></td>
-            <td><button class="del-btn"> <a href="delete.php?medicine_id=<?php $result['medicine_id']?>">Delete</a>   </button>
-            <button class="del-btn"> <a href="edit.php">Edit</a>   </button><?php $result['medicine_id']?></td>
+            <td> <form action="delmed.php" method="POST">
+                <input type="hidden" name="medicine_id" value="<?php echo $result['medicine_id']?>">
+                <input type="submit" name="delete" class="operation" value="Delete">
+            </form></td>
             </tr>
             </tr>
 <?php

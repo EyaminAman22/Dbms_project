@@ -8,17 +8,21 @@ error_reporting(0);
 #$user_data=check_login($connect);
 
 
-$company_name=$_POST["company_name"];
+
+$first_name=$_POST["first_name"];
+$last_name=$_POST["last_name"];
 $email=$_POST["email"];
 $phone=$_POST["phone"];
+$join_date=$_POST["join_date"];
+$salary=$_POST["salary"];
 $address=$_POST["address"];
 
-if(!empty($company_name) && !empty($email) && !empty($address) && !empty($phone) && !empty($address) && !is_numeric($company_name) && !is_numeric($email) && is_numeric($phone) && !is_numeric($address))
+if(!empty($first_name) && !empty($last_name) && !empty($email)  && !empty($phone) && !empty($salary) && !empty($address) && !is_numeric($first_name) && !is_numeric($last_name) && !is_numeric($email) && is_numeric($phone) && is_numeric($salary) && !is_numeric($address))
 {
-    $company_id=random_num(3);
-    $query= "insert into company1 (company_name, email, phone, address,company_id) VALUES ('$company_name','$email','$phone','$address','$company_id')";
+    $employee_id=random_num(5);
+    $query= "insert into employee1 (first_name, last_name, email, phone, join_date, salary, address,employee_id) VALUES ('$first_name','$last_name','$email','$phone','$join_date','$salary','$address','$employee_id')";
     $data=mysqli_query($connect,$query);
-    header("Location: addcompany.php");
+    header("Location: addemployee.php");
     die;
   }
 
@@ -93,28 +97,38 @@ if(!empty($company_name) && !empty($email) && !empty($address) && !empty($phone)
             <?php 
             if(isset($_POST['edit'])){
                 
-$company_id=$_POST['company_id'];
-$editquery="select * from company1 where company_id='$company_id'";
+$employee_id=$_POST['employee_id'];
+$editquery="select * from employee1 where employee_id='$employee_id'";
 $query=mysqli_query($connect,$editquery);
 if($query)
 {   while($result=mysqli_fetch_array($query)){
-    ?>     
-            <input name="company_name" placeholder="Company Name"type="text" value="<?php echo $result['company_name']?>"><br>
-           <input name="email" placeholder="E-mail"type="email" value="<?php echo $result['email']?>"><br>
-            <input name="phone" placeholder="Phone No..." type="number"  value="<?php echo $result['phone']?>"><br>
+    ?>      
+  
+
+    <input type="hidden" name="employee_id" value="<?php echo $result['employee_id']?>">
+    <input name="first_name" placeholder="First Name"type="text" value="<?php echo $result['first_name']?>"><br>
+           <input name="last_name" placeholder="Last Name"type="text" value="<?php echo $result['last_name']?>"><br>
+           <input name="email" placeholder="E-mail"type="text" value=" <?php echo $result['email']?>"><br>
+            <input name="phone" placeholder="Phone No..." type="number" value="<?php echo $result['phone']?>"><br>
+            <input name="join_date" placeholder="Joining Date" type="date" onfocus="(this.type='date')" value="<?php echo $result['join_date']?>"><br>
+            <input name="salary" placeholder="Salary" type="number" value="<?php echo $result['salary']?>"><br>
             <input name="address" placeholder="Address"type="text" value="<?php echo $result['address']?>"><br>
 
             <div class="btn"><input class="btn" type="submit" value="save"><input class="btn" type="reset"><br></div>
                 <?php
 }}}  if(isset($_POST['edit'])){
-  
-    $company_name=$_POST["company_name"];
+    $first_name=$_POST["first_name"];
+    $last_name=$_POST["last_name"];
     $email=$_POST["email"];
     $phone=$_POST["phone"];
+    $join_date=$_POST["join_date"];
+    $salary=$_POST["salary"];
     $address=$_POST["address"];
+    
+   
 
-    $company_id=$_POST['company_id'];
-    $editquery="update * from company1 set company_name='$company_name',email= '$email',phone='$phone',address= '$address', where customer_id='$customer_id'";
+    $employee_id=$_POST['employee_id'];
+    $editquery="update * from employee1 set last_name='$last_name',last_name='$last_name',email= '$email',phone='$phone',join_date='$join_date',salary='$salary',address= '$address' where employee_id='$employee_id'";
     $query=mysqli_query($connect,$editquery);
     if($query)
 {      header("Location:company.php");

@@ -96,12 +96,12 @@ if(!empty($company_name) && !empty($email) && !empty($address) && !empty($phone)
         </div>
         <div class="row3">
            <form action="" method="POST">
-           <input type="hidden" name="company_id" value="<?php echo $result['company_id']?>">
-           <input name="company_name" placeholder="Company Name"type="text" value="<?php echo $result['company_name']?>"><br>
-           <input name="email" placeholder="E-mail"type="email" value="<?php echo $result['email']?>"><br>
-            <input name="phone" placeholder="Phone No..." type="number" value="<?php echo $result['phone']?>"><br>
+           <input type="hidden" name="company_id" >
+           <input name="company_name" placeholder="Company Name"type="text" ><br>
+           <input name="email" placeholder="E-mail"type="email"><br>
+            <input name="phone" placeholder="Phone No..." type="number" ><br>
             <input name="address" placeholder="Address"type="text" value=""><br>
-            <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset" value="<?php echo $result['address']?>"><br></div>
+            <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset" ><br></div>
            </form>
         </div>
 

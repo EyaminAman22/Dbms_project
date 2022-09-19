@@ -103,8 +103,14 @@
             <td><?php echo $result['join_date']?></td>
             <td><?php echo $result['address']?></td>
             <td><?php echo $result['employee_id']?></td>
-            <td><button class="del-btn"> <a href="delete.php?employee_id=<?php $result['employee_id']?>">Delete</a>   </button>
-            <button class="del-btn"> <a href="edit.php">Edit</a>   </button><?php $result['employee_id']?></td>
+            <td> <form action="delemp.php" method="POST">
+                <input type="hidden" name="employee_id" value="<?php echo $result['employee_id']?>">
+                <input type="submit" name="delete" class="operation" value="Delete">
+            </form>
+            <form action="editemp.php" method="POST">
+                <input type="hidden" name="employee_id" value="<?php echo $result['employee_id']?>">
+                <input type="submit" name="edit" class="operation" value="Edit">
+            </form></td>
             </tr>
             </tr>
 <?php
