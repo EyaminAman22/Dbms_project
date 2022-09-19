@@ -8,17 +8,17 @@ error_reporting(0);
 #$user_data=check_login($connect);
 
 
-$first_name=$_POST["first_name"];
-$last_name=$_POST["last_name"];
-$gender=$_POST['gender'];
-$age=$_POST['age'];
-$phone=$_POST['phone'];
+$company_name=$_POST["company_name"];
+$email=$_POST["email"];
+$phone=$_POST["phone"];
+$address=$_POST["address"];
 
-if(!empty($first_name) && !empty($last_name) && !empty($gender)  && !empty($age) && !empty($phone) && !is_numeric($first_name) && !is_numeric($last_name) && !is_numeric($gender) && is_numeric($age) && is_numeric($phone)){
-    $customer_id=random_num(5);
-    $query= "insert into customer2 (first_name,last_name,gender,age,phone,customer_id) VALUES ('$first_name','$last_name','$gender','$age','$phone','$customer_id')";
-    mysqli_query($connect, $query);
-    header("Location: customer.php");
+if(!empty($company_name) && !empty($email) && !empty($address) && !empty($phone) && !empty($address) && !is_numeric($company_name) && !is_numeric($email) && is_numeric($phone) && !is_numeric($address))
+{
+    $company_id=random_num(3);
+    $query= "insert into company1 (company_name, email, phone, address,company_id) VALUES ('$company_name','$email','$phone','$address','$company_id')";
+    $data=mysqli_query($connect,$query);
+    header("Location: addcompany.php");
     die;
   }
 
@@ -93,32 +93,31 @@ if(!empty($first_name) && !empty($last_name) && !empty($gender)  && !empty($age)
             <?php 
             if(isset($_POST['edit'])){
                 
-$customer_id=$_POST['customer_id'];
-$editquery="select * from customer2 where customer_id='$customer_id'";
+$company_id=$_POST['company_id'];
+$editquery="select * from company1 where company_id='$company_id'";
 $query=mysqli_query($connect,$editquery);
 if($query)
 {   while($result=mysqli_fetch_array($query)){
-    ?>     <input type="hidden" name="customer_id" value="<?php echo $result['customer_id']?>">
-           <input name="first_name" placeholder="First Name"type="text" value="<?php echo $result['first_name']?>"><br>
-           <input name="last_name" placeholder="Last Name"type="text" value="<?php echo $result['last_name']?>"><br>
-           <input name="gender" placeholder="Gender"type="text" value="<?php echo $result['gender']?>"><br>
-           <input name="age" placeholder="Age" type="number" value="<?php echo $result['age']?>"><br>
-            <input name="phone" placeholder="Phone No..." type="number" value="<?php echo $result['phone']?>"><br>
+    ?>     
+            <input name="company_name" placeholder="Company Name"type="text"><br>
+           <input name="email" placeholder="E-mail"type="email"><br>
+            <input name="phone" placeholder="Phone No..." type="number"><br>
+            <input name="address" placeholder="Address"type="text"><br>
 
             <div class="btn"><input class="btn" type="submit" value="save"><input class="btn" type="reset"><br></div>
                 <?php
 }}}  if(isset($_POST['edit'])){
-    $first_name=$_POST["first_name"];
-$last_name=$_POST["last_name"];
-$gender=$_POST['gender'];
-$age=$_POST['age'];
-$phone=$_POST['phone'];
+  
+    $company_name=$_POST["company_name"];
+    $email=$_POST["email"];
+    $phone=$_POST["phone"];
+    $address=$_POST["address"];
 
-    $customer_id=$_POST['customer_id'];
-    $editquery="update * from customer2 set first_name='$first_name',last_name= '$last_name',gender='$gender',age= '$age',phone= '$phone' where customer_id='$customer_id'";
+    $company_id=$_POST['company_id'];
+    $editquery="update * from company1 set company_name='$company_name',email= '$email',phone='$phone',address= '$address', where customer_id='$customer_id'";
     $query=mysqli_query($connect,$editquery);
     if($query)
-{      header("Location:customer.php");
+{      header("Location:company.php");
 }
 }
            ?>
