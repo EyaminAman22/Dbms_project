@@ -1,29 +1,3 @@
-<?php 
-session_start();
-include("connection.php");
-include("function.php");
-error_reporting(0);
-
-
-#$user_data=check_login($connect);
-
-
-$first_name=$_POST["first_name"];
-$last_name=$_POST["last_name"];
-$gender=$_POST['gender'];
-$age=$_POST['age'];
-$phone=$_POST['phone'];
-
-if(!empty($first_name) && !empty($last_name) && !empty($gender)  && !empty($age) && !empty($phone) && !is_numeric($first_name) && !is_numeric($last_name) && !is_numeric($gender) && is_numeric($age) && is_numeric($phone)){
-    $customer_id=random_num(5);
-    $query= "insert into customer2 (first_name,last_name,gender,age,phone,customer_id) VALUES ('$first_name','$last_name','$gender','$age','$phone','$customer_id')";
-    mysqli_query($connect, $query);
-    header("Location: addcustomer.php");
-    die;
-  }
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,14 +67,16 @@ if(!empty($first_name) && !empty($last_name) && !empty($gender)  && !empty($age)
                <div class="texthead"><p>Customer Details</p></div>
         </div>
         <div class="row3">
-           <form action="" method="POST">
+           <form action="addcustomer_insert.php" method="POST">
            <input name="first_name" placeholder="First Name"type="text"><br>
            <input name="last_name" placeholder="Last Name"type="text"><br>
            <input name="gender" placeholder="Gender"type="text"><br>
            <input name="age" placeholder="Age" type="number"><br>
             <input name="phone" placeholder="Phone No..." type="number"><br>
 
-            <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>
+            <div class="btn">
+              <input class="btn" type="submit">
+              <input class="btn" type="reset"><br></div>
            </form>
         </div>
 		<!-- MAIN -->

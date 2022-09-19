@@ -1,30 +1,3 @@
-<?php 
-session_start();
-include("connection.php");
-include("function.php");
-error_reporting(0);
-#$user_data=check_login($connect);
-
-$medicine_name=$_POST["medicine_name"];
-$dosage=$_POST["dosage"];
-$mgf=$_POST["mgf"];
-$exp=$_POST["exp"];
-$category=$_POST["category"];
-$quantity=$_POST["quantity"];
-$base_price=$_POST["base_price"];
-$sell_price=$_POST["sell_price"];
-$company_id=$_POST["company_id"];
-
-if( !empty($medicine_name) && !empty($dosage)  && !empty($mgf) && !empty($exp) && !empty($category)&& !empty($quantity)&& !empty($base_price)&& !empty($sell_price))
-{
-    $query= "insert into medicine1 (medicine_id, medicine_name, dosage, mgf, exp, category, quantity,base_price,sell_price,company_id) VALUES ('$medicine_id','$medicine_name','$dosage','$mgf','$exp','$category','$quantity','$base_price','$sell_price','$company_id')";
-    $data=mysqli_query($connect,$query);
-    header("Location: addmedicine.php");
-    die;
-  }
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,22 +67,25 @@ if( !empty($medicine_name) && !empty($dosage)  && !empty($mgf) && !empty($exp) &
                <div class="texthead"><p>Medicine Details</p></div>
         </div>
         <div class="row3">
-           <form action="" method="POST">
-           <input name="medicine_name" placeholder="Medicine Name"type="text"><br>
-           <input name="dosage" placeholder="Dosage(mg/ml)"type="number"><br>
-           <input name="mgf" placeholder="MGF"type="date"><br>
-            <input name="exp" placeholder="EXP" type="date"><br>
-            <input name="category" placeholder="Category" type="text" list="exampleList"><br>
-                   <datalist id="exampleList">
-                      <option value="Tablet">  
-                      <option value="Liquid">
-                         </datalist>
-            <input name="quantity" placeholder="Quantity"type="number"><br>
-        
-            <input name="base_price" placeholder="Base Price" type="number"><br>
-            <input name="sell_price" placeholder="Sell Price"type="number"><br>
-            <input name="company_id" placeholder="Company ID"type="number"><br>
-            <div class="btn"><input class="btn" type="submit"><input class="btn" type="reset"><br></div>
+           <form action="addmedicine_insert.php" method="POST">
+            <input name="medicine_name" placeholder="Medicine Name"type="text"><br>
+            <input name="dosage" placeholder="Dosage(mg/ml)"type="number"><br>
+            <input name="mgf" placeholder="MGF"type="date"><br>
+              <input name="exp" placeholder="EXP" type="date"><br>
+              <input name="category" placeholder="Category" type="text" list="exampleList"><br>
+                    <datalist id="exampleList">
+                        <option value="Tablet">  
+                        <option value="Liquid">
+                          </datalist>
+              <input name="quantity" placeholder="Quantity"type="number"><br>
+          
+              <input name="base_price" placeholder="Base Price" type="number"><br>
+              <input name="sell_price" placeholder="Sell Price"type="number"><br>
+              <input name="company_id" placeholder="Company ID"type="number"><br>
+              <div class="btn">
+                <input class="btn" type="submit">
+                <input class="btn" type="reset">
+              </div>
            </form>
         </div>
 		<!-- MAIN -->
